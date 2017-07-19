@@ -92,3 +92,24 @@ thead{
   border: none;
   margin-left: 5px;
 }
+.admin_index_botton{
+}
+@media screen and (min-width:1023px){
+  .admin_index_botton{
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+.borrow_view{
+  margin: 10px 10px 0 10px;
+  padding: 7px;
+  background: #fff;
+}
+.borrow_view_img{
+  box-sizing: border-box;
+
+}
+.borrow_bookimg{
+  width: 100%;
+  height: 120px;
+}
