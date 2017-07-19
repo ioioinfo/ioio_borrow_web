@@ -1,0 +1,41 @@
+*,p{
+  margin: 0;
+  padding: 0;
+}
+a{
+  color: #fff;
+}
+body,html{
+  height: 100%;
+}
+.admin_index{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.admin_right{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0;
+}
+.admin_index_top{
+  width: 100%;
+  height: 51px;
+  line-height: 51px;
+  background: #ccc;
+}
+.admin_index_header{
+  color: #6e6e6e;
+  cursor: pointer;
+}
+.admin_index_exit{
+  color: #6e6e6e;
+  float: right;
+  top: 22.5px;
+  cursor: pointer;
+}
+.admin_index_exit:hover,.admin_index_header:hover{
+  text-decoration: none;
+}
