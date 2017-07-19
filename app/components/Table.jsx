@@ -4,8 +4,8 @@ var React = require('react');
 class Table extends React.Component {
     render() {
         return (
-            <div className="table-responsive">
-            <div className="form-inline-wrap">
+            <div className="table">
+            <div className="">
             <table className="table table-striped table-hover">
             <thead>
             <tr>
@@ -73,12 +73,12 @@ class Th extends React.Component {
             var sort = this.props.sort;
             if (sort && sort.name == this.props.item.name) {
                 if (sort.dir == "desc") {
-                    img = <span><img src="images/htpaixu.png" alt="" onClick={this.handleClick}/></span>;
+                    img = <span><img className="sort_img" src="images/htpaixu.png" alt="" onClick={this.handleClick}/></span>;
                 } else {
-                    img = <span><img src="images/htpaixu1.png" alt="" onClick={this.handleClick}/></span>;
+                    img = <span><img className="sort_img" src="images/htpaixu1.png" alt="" onClick={this.handleClick}/></span>;
                 }
             } else {
-                img = <span><img src="images/htpaixu2.png" alt="" onClick={this.handleClick}/></span>;
+                img = <span><img className="sort_img" src="images/htpaixu2.png" alt="" onClick={this.handleClick}/></span>;
             }
         }
         var thStyle = {

@@ -22,8 +22,8 @@ class AdminLeft extends React.Component {
     return (
       <div className="admin_left col-xs-6 col-sm-4 col-md-2">
         <div className="admin_logo">
-          <p className="admin_index_logo">IOIO后台</p>
-          <p className="admin_index_name">佑佑信息科技</p>
+          <span className="admin_index_logo">IOIO后台</span><br/>
+          <span className="admin_index_name">佑佑信息科技</span>
         </div>
         <AdminLeftNav/>
       </div>
@@ -112,6 +112,10 @@ class AdminRight extends React.Component {
     return (
       <div className="admin_right col-xs-12 col-sm-8 col-md-10">
         <AdminRightTop/>
+        <div className="admin_creat">
+            <span className="admin_creat_search"><input className="admin_creat_input" type="search" placeholder="请输入关键字" /></span><button className="admin_creat_button">搜 索</button>
+            <button className="admin_creat_button1">新 建</button>
+        </div>
         <Table tabthitems={this.state.tabthitems} tabtritems={this.state.tabtritems} sort={this.state.sort} onSort={this.handleSort} />
         <PageTab setPage={this.setPage} allNum={this.state.allNum} everyNum={this.state.everyNum} thisPage={this.state.thisPage} />
       </div>
@@ -123,7 +127,7 @@ class AdminRight extends React.Component {
 class AdminRightTop extends React.Component {
   render() {
     return (
-      <div className="admin_index_top col-xs-12 col-sm-12 col-md-12">
+      <div className="admin_index_top ">
         <a className="admin_index_header"><i className="fa fa-user-o fa-fw"></i>&nbsp; 请登录</a>
         <a className="admin_index_exit"><i className="fa fa-power-off fa-fw"></i>&nbsp; 退出</a>
       </div>

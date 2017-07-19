@@ -9591,12 +9591,13 @@ var AdminLeft = function (_React$Component2) {
           'div',
           { className: 'admin_logo' },
           React.createElement(
-            'p',
+            'span',
             { className: 'admin_index_logo' },
             'IOIO\u540E\u53F0'
           ),
+          React.createElement('br', null),
           React.createElement(
-            'p',
+            'span',
             { className: 'admin_index_name' },
             '\u4F51\u4F51\u4FE1\u606F\u79D1\u6280'
           )
@@ -9733,6 +9734,25 @@ var AdminRight = function (_React$Component4) {
         'div',
         { className: 'admin_right col-xs-12 col-sm-8 col-md-10' },
         React.createElement(AdminRightTop, null),
+        React.createElement(
+          'div',
+          { className: 'admin_creat' },
+          React.createElement(
+            'span',
+            { className: 'admin_creat_search' },
+            React.createElement('input', { className: 'admin_creat_input', type: 'search', placeholder: '\u8BF7\u8F93\u5165\u5173\u952E\u5B57' })
+          ),
+          React.createElement(
+            'button',
+            { className: 'admin_creat_button' },
+            '\u641C \u7D22'
+          ),
+          React.createElement(
+            'button',
+            { className: 'admin_creat_button1' },
+            '\u65B0 \u5EFA'
+          )
+        ),
         React.createElement(Table, { tabthitems: this.state.tabthitems, tabtritems: this.state.tabtritems, sort: this.state.sort, onSort: this.handleSort }),
         React.createElement(PageTab, { setPage: this.setPage, allNum: this.state.allNum, everyNum: this.state.everyNum, thisPage: this.state.thisPage })
       );
@@ -9760,7 +9780,7 @@ var AdminRightTop = function (_React$Component5) {
     value: function render() {
       return React.createElement(
         'div',
-        { className: 'admin_index_top col-xs-12 col-sm-12 col-md-12' },
+        { className: 'admin_index_top ' },
         React.createElement(
           'a',
           { className: 'admin_index_header' },
@@ -22428,36 +22448,44 @@ var PageTab = function (_React$Component) {
             }
             return React.createElement(
                 "div",
-                null,
+                { className: "page_wrap" },
                 React.createElement(
-                    "nav",
-                    { "aria-label": "Page navigation", className: "nav_text" },
+                    "div",
+                    { className: "ouveflow_hidden " },
                     React.createElement(
-                        "ul",
-                        { className: "pagination" },
-                        previous,
-                        fenitems.map(function (item) {
-                            return React.createElement(PageLi, { key: item, setPage: _this2.props.setPage, item: item, setSelected: _this2.setSelected, selected: thisPage });
-                        }),
-                        next
+                        "nav",
+                        { "aria-label": "Page navigation", className: "nav_text pull-right" },
+                        React.createElement(
+                            "ul",
+                            { className: "pagination" },
+                            previous,
+                            fenitems.map(function (item) {
+                                return React.createElement(PageLi, { key: item, setPage: _this2.props.setPage, item: item, setSelected: _this2.setSelected, selected: thisPage });
+                            }),
+                            next
+                        )
                     )
                 ),
                 React.createElement(
-                    "p",
-                    { className: "pull-right" },
+                    "div",
+                    { className: "ouveflow_hidden" },
                     React.createElement(
-                        "span",
-                        { className: "table-tab-span4" },
-                        "\u5171",
-                        allPage,
-                        "\u9875"
-                    ),
-                    React.createElement(
-                        "span",
-                        { className: "table-tab-span5" },
-                        "\u5171",
-                        allNum,
-                        "\u6761\u8BB0\u5F55"
+                        "p",
+                        { className: "pull-right" },
+                        React.createElement(
+                            "span",
+                            { className: "table-tab-span4" },
+                            "\u5171",
+                            allPage,
+                            "\u9875"
+                        ),
+                        React.createElement(
+                            "span",
+                            { className: "table-tab-span5" },
+                            "\u5171",
+                            allNum,
+                            "\u6761\u8BB0\u5F55"
+                        )
                     )
                 )
             );
@@ -22549,10 +22577,10 @@ var Table = function (_React$Component) {
 
             return React.createElement(
                 "div",
-                { className: "table-responsive" },
+                { className: "table" },
                 React.createElement(
                     "div",
-                    { className: "form-inline-wrap" },
+                    { className: "" },
                     React.createElement(
                         "table",
                         { className: "table table-striped table-hover" },
@@ -22662,20 +22690,20 @@ var Th = function (_React$Component3) {
                         img = React.createElement(
                             "span",
                             null,
-                            React.createElement("img", { src: "images/htpaixu.png", alt: "", onClick: this.handleClick })
+                            React.createElement("img", { className: "sort_img", src: "images/htpaixu.png", alt: "", onClick: this.handleClick })
                         );
                     } else {
                         img = React.createElement(
                             "span",
                             null,
-                            React.createElement("img", { src: "images/htpaixu1.png", alt: "", onClick: this.handleClick })
+                            React.createElement("img", { className: "sort_img", src: "images/htpaixu1.png", alt: "", onClick: this.handleClick })
                         );
                     }
                 } else {
                     img = React.createElement(
                         "span",
                         null,
-                        React.createElement("img", { src: "images/htpaixu2.png", alt: "", onClick: this.handleClick })
+                        React.createElement("img", { className: "sort_img", src: "images/htpaixu2.png", alt: "", onClick: this.handleClick })
                     );
                 }
             }

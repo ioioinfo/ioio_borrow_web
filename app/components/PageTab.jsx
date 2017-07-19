@@ -70,8 +70,9 @@ class PageTab extends React.Component {
             var next=(<li className="disabled"><span aria-hidden="true">&raquo;</span></li>);
         }
         return (
-            <div>
-            <nav aria-label="Page navigation" className="nav_text">
+            <div className="page_wrap">
+            <div className="ouveflow_hidden ">
+            <nav aria-label="Page navigation" className="nav_text pull-right">
             <ul className="pagination">
             {previous}
             {fenitems.map(item => (
@@ -80,10 +81,13 @@ class PageTab extends React.Component {
             {next}
             </ul>
             </nav>
+            </div>
+            <div className="ouveflow_hidden">
             <p className="pull-right">
             <span className="table-tab-span4">共{allPage}页</span>
             <span className="table-tab-span5">共{allNum}条记录</span>
             </p>
+            </div>
             </div>
         );
     }
