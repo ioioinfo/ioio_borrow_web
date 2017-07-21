@@ -1,0 +1,22 @@
+.button_style_delect{
+  background: #FF7E00;
+  color: #fff;
+}
+.button_style_new{
+  background: #7EBE2C;
+  color: #fff;
+}
+.button_style_search{
+  background: #009695;
+  color: #fff;
+}
+
+/*新建图书弹出层title*/
+.borrow_creat_title_style{
+  background: #009695;
+  color: #fff;
+}
+.borrow_creat_style{
+  background: #fff;
+
+}

@@ -19,6 +19,7 @@ module.exports = {
         borrow_books: './app/borrow_books.jsx',
         return_list: './app/return_list.jsx',
         borrow_view: './app/borrow_view.jsx',
+        mobile_index: './app/mobile_index.jsx',
     },
     output: {
         path: __dirname,

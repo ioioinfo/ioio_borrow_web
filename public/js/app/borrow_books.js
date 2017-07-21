@@ -9520,6 +9520,16 @@ module.exports = getIteratorFn;
 "use strict";
 
 
+module.exports = __webpack_require__(113);
+
+
+/***/ }),
+/* 82 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -9764,7 +9774,7 @@ var PageLi = function (_React$Component2) {
 module.exports = PageTab;
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9811,16 +9821,16 @@ var Table = function (_React$Component) {
                             React.createElement(
                                 "tr",
                                 null,
-                                this.props.tabthitems.map(function (item) {
-                                    return React.createElement(Th, { key: item.name, item: item, sort: _this2.props.sort, onSort: _this2.props.onSort });
+                                this.props.tabthitems.map(function (item, index) {
+                                    return React.createElement(Th, { key: index, item: item, sort: _this2.props.sort, onSort: _this2.props.onSort });
                                 })
                             )
                         ),
                         React.createElement(
                             "tbody",
                             null,
-                            this.props.tabtritems.map(function (item) {
-                                return React.createElement(Tr, { key: item.id, item: item, tabthitems: _this2.props.tabthitems, refresh: _this2.props.refresh, checkTd: _this2.props.checkTd });
+                            this.props.tabtritems.map(function (item, index) {
+                                return React.createElement(Tr, { key: index, item: item, tabthitems: _this2.props.tabthitems, refresh: _this2.props.refresh, checkTd: _this2.props.checkTd });
                             })
                         )
                     )
@@ -9855,8 +9865,8 @@ var Tr = function (_React$Component2) {
             return React.createElement(
                 "tr",
                 null,
-                this.props.tabthitems.map(function (item) {
-                    return React.createElement(Td, { key: item.name, item: _this4.props.item, thitem: item, refresh: _this4.props.refresh, checkTd: _this4.props.checkTd });
+                this.props.tabthitems.map(function (item, index) {
+                    return React.createElement(Td, { key: index, item: _this4.props.item, thitem: item, refresh: _this4.props.refresh, checkTd: _this4.props.checkTd });
                 })
             );
         }
@@ -9980,16 +9990,6 @@ var Td = function (_React$Component4) {
 ;
 
 module.exports = Table;
-
-/***/ }),
-/* 83 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = __webpack_require__(113);
-
 
 /***/ }),
 /* 84 */
@@ -22494,10 +22494,10 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var React = __webpack_require__(32);
-var ReactDOM = __webpack_require__(83);
+var ReactDOM = __webpack_require__(81);
 
-var Table = __webpack_require__(82);
-var PageTab = __webpack_require__(81);
+var Table = __webpack_require__(83);
+var PageTab = __webpack_require__(82);
 
 var AdminIndex = function (_React$Component) {
   _inherits(AdminIndex, _React$Component);
@@ -22671,6 +22671,8 @@ var AdminRight = function (_React$Component4) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       this.loadData({});
+      var tableHeight = $(window).height() - 181;
+      $(".table").css("height", tableHeight + "px");
     }
   }, {
     key: 'setPage',
@@ -22691,24 +22693,59 @@ var AdminRight = function (_React$Component4) {
         React.createElement(AdminRightTop, null),
         React.createElement(
           'div',
-          { className: 'admin_creat' },
+          { className: 'admin_creat overflow_hidden' },
           React.createElement(
-            'span',
-            { className: 'admin_creat_search' },
-            React.createElement('input', { className: 'admin_creat_input', type: 'search', placeholder: '\u8BF7\u8F93\u5165\u5173\u952E\u5B57' })
-          ),
-          React.createElement(
-            'button',
-            { className: 'admin_creat_button' },
-            '\u641C \u7D22'
-          ),
-          React.createElement(
-            'button',
-            { className: 'admin_creat_button1' },
-            '\u65B0 \u5EFA'
+            'div',
+            { className: '' },
+            React.createElement(
+              'div',
+              { className: 'col-xs-12 col-sm-8 col-md-8' },
+              React.createElement(
+                'div',
+                { className: 'row' },
+                React.createElement(
+                  'div',
+                  { className: 'admin_creat_butto_wrap col-xs-12 col-sm-3 col-md-2' },
+                  React.createElement(
+                    'p',
+                    { className: 'button_style_delect text_align_center' },
+                    React.createElement('i', { className: 'fa fa-trash fa-fw admin_creat_button ' }),
+                    '\xA0 \u5220 \u9664'
+                  )
+                ),
+                React.createElement(
+                  'div',
+                  { className: 'admin_creat_butto_wrap col-xs-12 col-sm-3 col-md-2' },
+                  React.createElement(
+                    'p',
+                    { className: 'button_style_new text_align_center' },
+                    React.createElement('i', { className: 'fa fa-plus fa-fw admin_creat_button ' }),
+                    '\xA0 \u65B0 \u5EFA'
+                  )
+                )
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'col-xs-12 col-sm-4 col-md-4' },
+              React.createElement(
+                'div',
+                { className: 'row' },
+                React.createElement(
+                  'span',
+                  { className: 'admin_creat_search  col-xs-8 col-sm-8 col-md-8' },
+                  React.createElement('input', { className: 'admin_creat_input', type: 'search', placeholder: '\u8BF7\u8F93\u5165\u5173\u952E\u5B57' })
+                ),
+                React.createElement(
+                  'button',
+                  { className: 'admin_creat_button_search col-xs-4 col-sm-4 col-md-4 button_style_search' },
+                  '\u641C \u7D22'
+                )
+              )
+            )
           )
         ),
-        React.createElement(Table, { tabthitems: this.state.tabthitems, tabtritems: this.state.tabtritems, sort: this.state.sort, onSort: this.handleSort }),
+        React.createElement(Table, { tabthitems: this.state.tabthitems, tabtritems: this.state.tabtritems, sort: this.state.sort, onSort: this.handleSort, checkTd: checkTd }),
         React.createElement(PageTab, { setPage: this.setPage, allNum: this.state.allNum, everyNum: this.state.everyNum, thisPage: this.state.thisPage })
       );
     }
@@ -22756,6 +22793,84 @@ var AdminRightTop = function (_React$Component5) {
 }(React.Component);
 
 ;
+
+//判断特殊列
+var checkTd = function checkTd(defaultTd) {
+  var id = this.props.item.id;
+  var href = "product_edit?product_id=" + id;
+  var href1 = "product_view?product_id=" + id;
+
+  var product_down_click = function (e) {
+    var product_id = this.props.item.id;
+    $.ajax({
+      url: "/product_down",
+      dataType: 'json',
+      type: 'POST',
+      data: { "product_id": product_id },
+      success: function (data) {
+        if (data.success) {
+          this.props.refresh(product_id, this.props.item.status_name);
+        } else {}
+      }.bind(this),
+      error: function (xhr, status, err) {}.bind(this)
+    });
+  }.bind(this);
+
+  var product_up_click = function (e) {
+    var product_id = this.props.item.id;
+    $.ajax({
+      url: "/product_up",
+      dataType: 'json',
+      type: 'POST',
+      data: { "product_id": product_id },
+      success: function (data) {
+        if (data.success) {
+          this.props.refresh(product_id, this.props.item.status_name);
+        } else {}
+      }.bind(this),
+      error: function (xhr, status, err) {}.bind(this)
+    });
+  }.bind(this);
+
+  if (this.props.thitem.type == "operation") {
+    return React.createElement(
+      'td',
+      null,
+      React.createElement(
+        'p',
+        { className: 'operation_style' },
+        React.createElement(
+          'a',
+          { className: 'btn btn-primary btn-xs operate_announce', href: href },
+          '\u8FD8\u4E66'
+        )
+      ),
+      React.createElement(
+        'p',
+        { className: 'operation_style', onClick: product_down_click },
+        React.createElement(
+          'a',
+          { className: 'btn btn-info btn-xs operate_announce' },
+          '\u4E0B\u67B6'
+        )
+      )
+    );
+  } else if (this.props.thitem.type == "check") {
+    return React.createElement(
+      'td',
+      null,
+      React.createElement('input', { type: 'checkbox' })
+    );
+  } else if (this.props.thitem.type == "images") {
+    return React.createElement(
+      'td',
+      null,
+      React.createElement('img', { className: 'book_img', src: "images/" + this.props.item[this.props.thitem.name], alt: '' })
+    );
+  } else {
+    return defaultTd;
+  }
+};
 
 // 返回到页面
 ReactDOM.render(React.createElement(AdminIndex, null), document.getElementById("admin"));

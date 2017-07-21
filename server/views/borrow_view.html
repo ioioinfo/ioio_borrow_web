@@ -14,6 +14,37 @@
 <body>
     <div id="admin"></div>
     <script type="text/javascript">
+
+      //表头
+      var tt = [{name:'id',title:'全部',type:"check",sort:false}
+      ,{name:'product_name',title:'书籍',sort:false}
+      ,{name:'book_img',title:'图片',type:"images",sort:false}
+      ,{name:'number',title:'编号',sort:false}
+      ,{name:'price',title:'价格',sort:false}
+      ,{name:'borrow_data',title:'借阅日期',sort:false}
+      ,{name:'return_name',title:'归还日期',sort:false}
+      ,{name:'more_data',title:'超时',sort:false}
+      ,{name:'borrow_price',title:'费用',sort:false}
+      ,{name:'operation',title:'操作',type:"operation"}];
+
+
+      function getTableData(params,cb) {
+          params.everyNum = 50;
+          var allNum = 0;
+          $.get("/list_data",{params:JSON.stringify(params)},function(data){
+              if (data.success) {
+                if (data.rows) {
+                  allNum = data.num;
+                  var rows = [{product_name:"三国演义",book_img:"sanguoyanyi.jpg",
+                              number:"000001",price:"100",borrow_data:"20017/5/21",
+                              return_name:"20017/7/22",more_data:"1",borrow_price:"1"}];
+                  cb({tabthitems:tt,tabtritems:rows,allNum:allNum,everyNum:params.everyNum});
+                }
+              }else {
+                  alert(data.message);
+              }
+          });
+      };
     </script>
     <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js"></script>

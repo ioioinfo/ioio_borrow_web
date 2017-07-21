@@ -64,6 +64,16 @@ exports.register = function(server, options, next) {
             },
         },
 
+        //web首页
+        {
+            method: 'GET',
+            path: '/mobile_index',
+            handler: function(request, reply) {
+                return reply.view("mobile_index");
+            },
+        },
+
+
 
     ]);
 

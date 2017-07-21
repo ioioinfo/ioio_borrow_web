@@ -100,6 +100,8 @@ class AdminRight extends React.Component {
   }
   componentDidMount() {
       this.loadData({});
+      var tableHeight = $(window).height()-181;
+      $(".table").css("height",tableHeight+"px");
   }
   setPage(thisPage) {
       this.loadData({thisPage:thisPage});
@@ -112,11 +114,33 @@ class AdminRight extends React.Component {
     return (
       <div className="admin_right col-xs-12 col-sm-8 col-md-10">
         <AdminRightTop/>
-        <div className="admin_creat">
-            <span className="admin_creat_search"><input className="admin_creat_input" type="search" placeholder="请输入关键字" /></span><button className="admin_creat_button">搜 索</button>
-            <button className="admin_creat_button1">新 建</button>
+        <div className="admin_creat overflow_hidden">
+            <div className="">
+              <div className="col-xs-12 col-sm-8 col-md-8">
+                <div className="row">
+                  <div className="admin_creat_butto_wrap col-xs-12 col-sm-3 col-md-2">
+                    <p  className="button_style_delect text_align_center"><i className="fa fa-trash fa-fw admin_creat_button "></i>&nbsp; 删 除</p>
+                  </div>
+                  <div className="admin_creat_butto_wrap col-xs-12 col-sm-3 col-md-2">
+                    <p  className="button_style_new text_align_center"><i className="fa fa-plus fa-fw admin_creat_button "></i>&nbsp; 新 建</p>
+                  </div>
+                </div>
+
+              </div>
+              <div className="col-xs-12 col-sm-4 col-md-4">
+                <div  className="row">
+                  <span className="admin_creat_search  col-xs-8 col-sm-8 col-md-8">
+                    <input className="admin_creat_input" type="search" placeholder="请输入关键字" />
+                  </span>
+                  <button className="admin_creat_button_search col-xs-4 col-sm-4 col-md-4 button_style_search">搜 索</button>
+
+
+                </div>
+              </div>
+
+            </div>
         </div>
-        <Table tabthitems={this.state.tabthitems} tabtritems={this.state.tabtritems} sort={this.state.sort} onSort={this.handleSort} />
+        <Table tabthitems={this.state.tabthitems} tabtritems={this.state.tabtritems} sort={this.state.sort} onSort={this.handleSort}  checkTd={checkTd} />
         <PageTab setPage={this.setPage} allNum={this.state.allNum} everyNum={this.state.everyNum} thisPage={this.state.thisPage} />
       </div>
     );
@@ -133,6 +157,79 @@ class AdminRightTop extends React.Component {
       </div>
     );
   }
+};
+
+
+
+
+//判断特殊列
+var checkTd = function(defaultTd) {
+    var id = this.props.item.id;
+    var href = "product_edit?product_id="+id;
+    var href1 = "product_view?product_id="+id;
+
+
+    var product_down_click = function(e){
+        var  product_id = this.props.item.id;
+        $.ajax({
+            url: "/product_down",
+            dataType: 'json',
+            type: 'POST',
+            data: {"product_id":product_id},
+            success: function(data) {
+                if (data.success) {
+                    this.props.refresh(product_id,this.props.item.status_name);
+                }else {
+                }
+
+            }.bind(this),
+            error: function(xhr, status, err) {
+            }.bind(this)
+        });
+    }.bind(this);
+
+
+    var product_up_click = function(e){
+        var  product_id = this.props.item.id;
+        $.ajax({
+            url: "/product_up",
+            dataType: 'json',
+            type: 'POST',
+            data: {"product_id":product_id},
+            success: function(data) {
+                if (data.success) {
+                    this.props.refresh(product_id,this.props.item.status_name);
+                }else {
+                }
+
+            }.bind(this),
+            error: function(xhr, status, err) {
+            }.bind(this)
+        });
+    }.bind(this);
+
+        if(this.props.thitem.type=="operation"){
+          return (
+              <td>
+              <p className="operation_style"><a  className="btn btn-primary btn-xs operate_announce" href={href}>还书</a></p>
+              <p className="operation_style" onClick={product_down_click}><a  className="btn btn-info btn-xs operate_announce">下架</a></p>
+              </td>
+          );
+        }else if (this.props.thitem.type=="check") {
+          return (
+            <td>
+              <input type="checkbox" />
+            </td>
+          );
+        }else if (this.props.thitem.type=="images") {
+          return (
+            <td>
+              <img className="book_img" src={"images/"+this.props.item[this.props.thitem.name]} alt="" />
+            </td>
+          );
+        }else {
+        return defaultTd;
+    }
 };
 
 
