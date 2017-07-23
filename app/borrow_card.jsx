@@ -130,9 +130,43 @@ class AdminRight extends React.Component {
 
             </div>
         </div>
-        <p className="borrow_card_title">新建借书卡</p>
+        <p className="borrow_card_title"><i className="fa fa-window-minimize fa-fw"></i>&nbsp; 新建计划</p>
         <div className="creat_card">
+          <p className="borrow_card_in"><i className="fa fa-credit-card fa-fw"></i>&nbsp; 新建借书卡</p>
+          <p className="borrow_card_name">
+            日期：<span className="borrow_card_input_span">
+            <input className="borrow_card_input_span_input" type="text" id="creat_date" />
+            </span><i className="fa fa-asterisk fa-fw"></i>
+            <span className="borrow_card_input_span_input_color">请点击选择办卡日期</span>
+          </p>
+          <p className="borrow_card_name">
+            到期：<span className="borrow_card_input_span">
+            <input className="borrow_card_input_span_input" type="text" id="creat_date_end"  />
+            </span><i className="fa fa-asterisk fa-fw"></i>
+            <span className="borrow_card_input_span_input_color">请点击选择到期日期</span>
+          </p>
+          <p className="borrow_card_name">
+            姓名：<span className="borrow_card_input_span">
+            <input className="borrow_card_input_span_input" type="text" />
+            </span><i className="fa fa-asterisk fa-fw"></i>
+            <span className="borrow_card_input_span_input_color">请手动输入</span>
+          </p>
+          <p className="borrow_card_name">
+            卡号：<span className="borrow_card_input_span">
+            <input className="borrow_card_input_span_input" type="text" readOnly="readOnly" />
+            </span><i className="fa fa-asterisk fa-fw"></i>
+            <span className="borrow_card_input_span_input_color">自动生成无需手填</span>
+          </p>
+          <p className="borrow_card_name">
+            学号：<span className="borrow_card_input_span">
+            <input className="borrow_card_input_span_input" type="text" />
+            </span><i className="fa fa-asterisk fa-fw"></i>
+            <span className="borrow_card_input_span_input_color">请手动输入</span>
+          </p>
 
+          <div className="button_creat_card">
+            <p  className="button_style_creat_card text_align_center"><i className="fa fa-credit-card-alt fa-fw admin_creat_button "></i>&nbsp; 新 建</p>
+          </div>
         </div>
       </div>
     );

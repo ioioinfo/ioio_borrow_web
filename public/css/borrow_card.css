@@ -7,6 +7,57 @@
   }
   .borrow_card_title{
     width: 700px;
+    padding: 17px 0;
     margin: 0 auto;
+  }
+
+
+  .borrow_card_input_span{
+    display: inline-block;
+    border: 1px solid #F2F0F1;
+  }
+  .borrow_card_input_span_input{
+    border: none;
+    outline-style: none;
+    width: 235px;
+  }
+}
+.fa-asterisk{
+  color: red;
+  font-size: 12px;
+}
+.borrow_card_input_span_input_color{
+  color: #666;
+  font-size: 12px;
+}
+.creat_card{
+  padding: 27px;
+}
+.borrow_card_name{
+  padding: 17px;
+}
+.button_style_creat_card{
+  display: inline-block;
+  padding: 3px 88.5px;
+  border-radius: 7px;
+  background: #009695;
+
+}
+.button_creat_card{
+  margin-left: 60px;
+  color: #fff;
+}
+
+@media screen and (max-width:1024px){
+  .creat_card{
+    width: 90%;
+    background: #fff;
+    margin: 0 auto;
+    overflow: auto;
+  }
+  .borrow_card_title{
+    width: 90%;
+    margin: 0 auto;
+    padding: 17px 0;
   }
 }

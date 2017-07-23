@@ -22283,9 +22283,109 @@ var AdminRight = function (_React$Component5) {
         React.createElement(
           'p',
           { className: 'borrow_card_title' },
-          '\u65B0\u5EFA\u501F\u4E66\u5361'
+          React.createElement('i', { className: 'fa fa-window-minimize fa-fw' }),
+          '\xA0 \u65B0\u5EFA\u8BA1\u5212'
         ),
-        React.createElement('div', { className: 'creat_card' })
+        React.createElement(
+          'div',
+          { className: 'creat_card' },
+          React.createElement(
+            'p',
+            { className: 'borrow_card_in' },
+            React.createElement('i', { className: 'fa fa-credit-card fa-fw' }),
+            '\xA0 \u65B0\u5EFA\u501F\u4E66\u5361'
+          ),
+          React.createElement(
+            'p',
+            { className: 'borrow_card_name' },
+            '\u65E5\u671F\uFF1A',
+            React.createElement(
+              'span',
+              { className: 'borrow_card_input_span' },
+              React.createElement('input', { className: 'borrow_card_input_span_input', type: 'text', id: 'creat_date' })
+            ),
+            React.createElement('i', { className: 'fa fa-asterisk fa-fw' }),
+            React.createElement(
+              'span',
+              { className: 'borrow_card_input_span_input_color' },
+              '\u8BF7\u70B9\u51FB\u9009\u62E9\u529E\u5361\u65E5\u671F'
+            )
+          ),
+          React.createElement(
+            'p',
+            { className: 'borrow_card_name' },
+            '\u5230\u671F\uFF1A',
+            React.createElement(
+              'span',
+              { className: 'borrow_card_input_span' },
+              React.createElement('input', { className: 'borrow_card_input_span_input', type: 'text', id: 'creat_date_end' })
+            ),
+            React.createElement('i', { className: 'fa fa-asterisk fa-fw' }),
+            React.createElement(
+              'span',
+              { className: 'borrow_card_input_span_input_color' },
+              '\u8BF7\u70B9\u51FB\u9009\u62E9\u5230\u671F\u65E5\u671F'
+            )
+          ),
+          React.createElement(
+            'p',
+            { className: 'borrow_card_name' },
+            '\u59D3\u540D\uFF1A',
+            React.createElement(
+              'span',
+              { className: 'borrow_card_input_span' },
+              React.createElement('input', { className: 'borrow_card_input_span_input', type: 'text' })
+            ),
+            React.createElement('i', { className: 'fa fa-asterisk fa-fw' }),
+            React.createElement(
+              'span',
+              { className: 'borrow_card_input_span_input_color' },
+              '\u8BF7\u624B\u52A8\u8F93\u5165'
+            )
+          ),
+          React.createElement(
+            'p',
+            { className: 'borrow_card_name' },
+            '\u5361\u53F7\uFF1A',
+            React.createElement(
+              'span',
+              { className: 'borrow_card_input_span' },
+              React.createElement('input', { className: 'borrow_card_input_span_input', type: 'text', readOnly: 'readOnly' })
+            ),
+            React.createElement('i', { className: 'fa fa-asterisk fa-fw' }),
+            React.createElement(
+              'span',
+              { className: 'borrow_card_input_span_input_color' },
+              '\u81EA\u52A8\u751F\u6210\u65E0\u9700\u624B\u586B'
+            )
+          ),
+          React.createElement(
+            'p',
+            { className: 'borrow_card_name' },
+            '\u5B66\u53F7\uFF1A',
+            React.createElement(
+              'span',
+              { className: 'borrow_card_input_span' },
+              React.createElement('input', { className: 'borrow_card_input_span_input', type: 'text' })
+            ),
+            React.createElement('i', { className: 'fa fa-asterisk fa-fw' }),
+            React.createElement(
+              'span',
+              { className: 'borrow_card_input_span_input_color' },
+              '\u8BF7\u624B\u52A8\u8F93\u5165'
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'button_creat_card' },
+            React.createElement(
+              'p',
+              { className: 'button_style_creat_card text_align_center' },
+              React.createElement('i', { className: 'fa fa-credit-card-alt fa-fw admin_creat_button ' }),
+              '\xA0 \u65B0 \u5EFA'
+            )
+          )
+        )
       );
     }
   }]);
