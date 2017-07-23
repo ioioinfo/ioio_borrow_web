@@ -94,6 +94,15 @@ exports.register = function(server, options, next) {
         },
 
 
+        //后台借书卡管理
+        {
+            method: 'GET',
+            path: '/borrow_card',
+            handler: function(request, reply) {
+                return reply.view("borrow_card");
+            },
+        },
+
 
     ]);
 

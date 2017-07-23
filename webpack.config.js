@@ -22,6 +22,7 @@ module.exports = {
         mobile_index: './app/mobile_index.jsx',
         my_borrow: './app/my_borrow.jsx',
         person: './app/person.jsx',
+        borrow_card: './app/borrow_card.jsx',
     },
     output: {
         path: __dirname,

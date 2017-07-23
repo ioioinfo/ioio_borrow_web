@@ -4,9 +4,9 @@ var React = require('react');
 class Table extends React.Component {
     render() {
         return (
-            <div className="table">
+            <div id="table">
             <div className="">
-            <table className="table table-striped table-hover">
+            <table className="table table-striped table-hover table-bordered">
             <thead>
             <tr>
             {this.props.tabthitems.map((item,index) => (
