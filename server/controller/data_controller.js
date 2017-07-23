@@ -42,6 +42,23 @@ exports.register = function(server, options, next) {
             }
         },
         
+        //返回menu菜单列表
+        {
+            method: 'GET',
+            path: '/menu_list',
+            handler: function(request, reply){
+                var rows = [
+                    {icon:"fa fa-home fa-fw",navname:"首页",a:"index", snav:[]},
+                    {icon:"fa fa-minus-square-o fa-fw",navname:"借阅记录",a:"borrow_books",snav:[]},
+                    {icon:"fa fa-tags fa-fw",navname:"还书列表",a:"return_list",snav:[]},
+                    {icon:"fa fa-television fa-fw",navname:"还书详情",a:"borrow_view",snav:[]},
+                    {icon:"fa fa-users fa-fw",navname:"借书证",a:"borrow_card",snav:[]},
+                ];
+                
+                return reply({"success":true,"rows":rows,"message":"ok"});
+            }
+        },
+        
         //图书列表数据
         {
             method: "GET",
