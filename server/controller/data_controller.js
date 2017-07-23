@@ -42,6 +42,22 @@ exports.register = function(server, options, next) {
             }
         },
         
+        //返回menu菜单列表
+        {
+            method: 'GET',
+            path: '/menu_list',
+            handler: function(request, reply){
+                var rows = [
+                    {icon:"fa fa-home fa-fw",navname:"首页",snav:[{icon:"fa fa-home fa-fw",navname:"首页"}]},
+                    {icon:"fa fa-minus-square-o fa-fw",navname:"功能菜单一",snav:[{icon:"fa fa-home fa-fw",navname:"首页"},
+                    {icon:"fa fa-home fa-fw",navname:"首页"},
+                    {icon:"fa fa-home fa-fw",navname:"首页"}]}}
+                ];
+                
+                return reply({"success":true,"rows":rows,"message":"ok"});
+            }
+        },
+        
         //图书列表数据
         {
             method: "GET",
