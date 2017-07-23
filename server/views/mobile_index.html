@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/mobile_index.css">
+    <link rel="stylesheet" href="css/back_top.css">
 </head>
 <body>
     <div id="admin"></div>
@@ -19,12 +20,15 @@
     <script src="js/app/mobile_index.js"></script>
 
 
-
+    <!-- 返回顶部 -->
     <script type="text/javascript" class="dialog js_show">
         $(function(){
             var $iosDialog1 = $('#iosDialog1');
 
             $('.weui-dialog__btn_default').click(function(){
+                $('.js_dialog').fadeOut(200);
+            });
+            $('.weui-mask').click(function(){
                 $('.js_dialog').fadeOut(200);
             });
 
@@ -34,5 +38,25 @@
         });
 
         </script>
+
+    <!-- 分类 -->
+    <script type="text/javascript">
+    $(function(){
+        var $book_type_infor = $('#book_type_infor');
+        var $backopc = $book_type_infor.find('.weui-mask');
+
+        $(".book_type_nav").on('click', function(){
+            $book_type_infor.fadeIn(200);
+            $backopc.on('click',function () {
+                $book_type_infor.fadeOut(200);
+            });
+        });
+
+
+        $(".weui-actionsheet__cell").on('click',function () {
+            $book_type_infor.fadeOut(200);
+        });
+    });
+  </script>
 </body>
 </html>

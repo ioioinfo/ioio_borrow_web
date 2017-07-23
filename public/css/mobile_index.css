@@ -1,14 +1,12 @@
 body,html{
   height: 100%;
-  background:url(../images/back.jpg)no-repeat 0 0;
-  background-size: cover;
+  background:#f4f4f4;
 }
 .web_index{
   position: relative;
 
 }
 .book_name_color{
-  color: #fff;
 }
 .padding{
   padding: 0;
@@ -24,5 +22,22 @@ body,html{
   top: 0;
   left: 0;
   right: 0;
+  bottom: 0;
   overflow: auto;
+}
+.borrow_none{
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+}
+.book_type_nav{
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+  background: #fff;
+  text-align: center;
+  position: fixed;
+  right: 23px;
+  bottom: 90px;
 }

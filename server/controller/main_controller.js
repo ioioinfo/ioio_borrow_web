@@ -74,6 +74,26 @@ exports.register = function(server, options, next) {
         },
 
 
+        //web我的借阅
+        {
+            method: 'GET',
+            path: '/my_borrow',
+            handler: function(request, reply) {
+                return reply.view("my_borrow");
+            },
+        },
+
+
+        //web个人中心
+        {
+            method: 'GET',
+            path: '/person',
+            handler: function(request, reply) {
+                return reply.view("person");
+            },
+        },
+
+
 
     ]);
 

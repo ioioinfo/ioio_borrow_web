@@ -1,0 +1,103 @@
+.borrow_person_car{
+  width: 86.7%;
+  height: 200px;
+  margin: 0 auto;
+  background: url(../images/borrow_car.png)no-repeat 0 0;
+  background-size: cover;
+  border-radius: 6px;
+  padding: 17px;
+}
+.web_index{
+  padding-top: 20px;
+}
+.borrow_person_car p{
+
+  font-weight: 400;
+
+}
+.borrow_name{
+  margin-top: 17px;
+  font-size: 16px;
+  color: #fff;
+  opacity: 0.7;
+}
+.borrow_name span{
+  display: inline-block;
+  width: 50%;
+}
+.borrow_name span:last-child{
+  text-align: right;
+  color: #fff;
+}
+.card_num{
+  padding-top: 17px;
+  padding-bottom: 17px;
+  font-size: 24px;
+  color: #fff;
+  margin: 0;
+}
+.web_index .borrow_data{
+  font-size: 16px;
+  color: #fff;
+  opacity: 0.6;
+}
+.borrow_data span{
+  display: inline-block;
+  width: 50%;
+}
+.card_name{
+  color: #fff;
+  opacity: 0.6;
+}
+.borrow_card{
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.borrow_card span{
+  display: inline-block;
+  padding: 2px 25px;
+  font-size: 14px;
+  color: #999;
+  background: #f4f4f4;
+  border-radius: 16px;
+}
+.borrow_infor{
+  width: 86.7%;
+  margin: 0 auto;
+}
+.borrow_infor p{
+  height: 37px;
+  line-height: 37px;
+  overflow: hidden;
+}
+.borrow_left_title{
+  color: #9F9D9E;
+}
+.fa-book_color{
+  color: #F8486C;
+}
+.dian1{
+  color: #F8486C;
+  font-size: 40px;
+}
+.fa-times-rectangle_color{
+  color: #FFCE5A;
+}
+.dian2{
+  color: #FFCE5A;
+  font-size: 40px;
+}
+.fa-credit-card_color{
+  color: #42DA8D;
+}
+.dian3{
+  color: #42DA8D;
+  font-size: 40px;
+}
+.borrow_right_infor{
+  float: right;
+  padding-top: 10px;
+  color: #4A454B;
+  font-size: 16px;
+}

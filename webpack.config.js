@@ -20,6 +20,8 @@ module.exports = {
         return_list: './app/return_list.jsx',
         borrow_view: './app/borrow_view.jsx',
         mobile_index: './app/mobile_index.jsx',
+        my_borrow: './app/my_borrow.jsx',
+        person: './app/person.jsx',
     },
     output: {
         path: __dirname,
