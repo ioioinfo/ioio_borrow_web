@@ -1,0 +1,12 @@
+@media screen and (min-width:1024px) {
+  .creat_card{
+    width: 700px;
+    min-height: 200px;
+    background: #fff;
+    margin: 0 auto;
+  }
+  .borrow_card_title{
+    width: 700px;
+    margin: 0 auto;
+  }
+}

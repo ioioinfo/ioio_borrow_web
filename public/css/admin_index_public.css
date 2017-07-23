@@ -19,20 +19,21 @@ thead{
 .pagination{
   margin: 0;
 }
-.table{
+#table{
   overflow: auto;
   margin-bottom: 5px;
 }
 .table>thead>tr>th{
-  border: none;
   text-align: center;
+  border: 1px solid #fff;
 }
 tr{
   text-align: center;
 }
 .table>tbody>tr>td{
-  height: 70px;
-  line-height: 70px;
+  height: 50px;
+  vertical-align: middle;
+  border: 1px solid #fff;
 }
 tbody{
   overflow: auto;
@@ -43,7 +44,7 @@ tbody{
 }
 .book_img{
   width: 50px;
-  height: 70px;
+  height: 50px;
 }
 .page_wrap{
   padding: 0 15px;
@@ -183,4 +184,8 @@ tbody{
 .borrow_crea_input{
   display: inline-block;
   border: 1px solid #999;
+}
+
+.borrow_creat {
+  display: none;
 }

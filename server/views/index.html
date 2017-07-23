@@ -16,25 +16,23 @@
     <script type="text/javascript">
 
     //表头
-    var tt = [{name:'check',title:'全部',type:"check",sort:false}
-    ,{name:'product_name',title:'书籍',sort:false}
+    var tt = [{name:'check',width:"5%", title:'全部',type:"check",sort:false}
+    ,{name:'book_name',width:"30%",title:'书籍',sort:false}
+    ,{name:'author_name',title:'作者',sort:false}
     ,{name:'book_img',title:'图片',type:"images",sort:false}
-    ,{name:'id',title:'编号',sort:false}
+    ,{name:'isbn',title:'编号',sort:false}
     ,{name:'price',title:'价格',sort:false}
-    ,{name:'number',title:'数量',sort:false}
-    ,{name:'borrow_price',title:'费用',sort:false}
+    ,{name:'can_borrow',title:'可借',sort:false}
     ,{name:'operation',title:'操作',type:"operation"}];
 
       function getTableData(params,cb) {
           params.everyNum = 50;
           var allNum = 0;
-          $.get("/list_data",{params:JSON.stringify(params)},function(data){
+          $.get("/list_books",{params:JSON.stringify(params)},function(data){
               if (data.success) {
                 if (data.rows) {
                   allNum = data.num;
-                  var rows = [{product_name:"三国演义",book_img:"sanguoyanyi.jpg",
-                              id:"000001",price:"100",number:"1",borrow_price:"1"}];
-                  cb({tabthitems:tt,tabtritems:rows,allNum:allNum,everyNum:params.everyNum});
+                  cb({tabthitems:tt,tabtritems:data.rows,allNum:allNum,everyNum:params.everyNum});
                 }
               }else {
                   alert(data.message);
