@@ -53,6 +53,9 @@ exports.register = function(server, options, next) {
                     {icon:"fa fa-tags fa-fw",navname:"还书列表",a:"return_list",snav:[]},
                     {icon:"fa fa-user fa-fw",navname:"学员列表",a:"students_list",snav:[]},
                     {icon:"fa fa-vcard fa-fw",navname:"借书证",a:"borrow_card",snav:[]},
+                    {icon:"fa fa-money fa-fw",navname:"办卡押金",a:"card_deposit",snav:[]},
+                    {icon:"fa fa-cube fa-fw",navname:"图书库存",a:"book_inventory",snav:[]},
+                    {icon:"fa fa-vcard fa-fw",navname:"图书调拨",a:"borrow_card",snav:[]},
                 ];
                 
                 return reply({"success":true,"rows":rows,"message":"ok"});
