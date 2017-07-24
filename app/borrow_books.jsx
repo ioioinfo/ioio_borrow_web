@@ -101,65 +101,17 @@ class AdminRightTop extends React.Component {
 //判断特殊列
 var checkTd = function(defaultTd) {
     var id = this.props.item.id;
-    var href = "product_edit?product_id="+id;
-    var href1 = "product_view?product_id="+id;
-
-
-    var product_down_click = function(e){
-        var  product_id = this.props.item.id;
-        $.ajax({
-            url: "/product_down",
-            dataType: 'json',
-            type: 'POST',
-            data: {"product_id":product_id},
-            success: function(data) {
-                if (data.success) {
-                    this.props.refresh(product_id,this.props.item.status_name);
-                }else {
-                }
-
-            }.bind(this),
-            error: function(xhr, status, err) {
-            }.bind(this)
-        });
-    }.bind(this);
-
-
-    var product_up_click = function(e){
-        var  product_id = this.props.item.id;
-        $.ajax({
-            url: "/product_up",
-            dataType: 'json',
-            type: 'POST',
-            data: {"product_id":product_id},
-            success: function(data) {
-                if (data.success) {
-                    this.props.refresh(product_id,this.props.item.status_name);
-                }else {
-                }
-
-            }.bind(this),
-            error: function(xhr, status, err) {
-            }.bind(this)
-        });
-    }.bind(this);
 
         if(this.props.thitem.type=="operation"){
           return (
               <td>
-              <p className="" onClick={product_down_click}><a  className="btn btn-info btn-xs operate_announce">借阅</a></p>
+              <p className=""><a href="borrow_books_view"  className="btn btn-info btn-xs operate_announce">查 看</a></p>
               </td>
           );
         }else if (this.props.thitem.type=="check") {
           return (
             <td>
               <input type="checkbox" />
-            </td>
-          );
-        }else if (this.props.thitem.type=="images") {
-          return (
-            <td>
-              <img className="book_img" src={"images/"+this.props.item[this.props.thitem.name]} alt="" />
             </td>
           );
         }else {

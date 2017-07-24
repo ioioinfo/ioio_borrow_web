@@ -37,12 +37,21 @@ exports.register = function(server, options, next) {
             },
         },
 
-        //借书记录
+        //借阅记录
         {
             method: 'GET',
             path: '/borrow_books',
             handler: function(request, reply) {
                 return reply.view("borrow_books");
+            },
+        },
+
+        //借阅记录详情
+        {
+            method: 'GET',
+            path: '/borrow_books_view',
+            handler: function(request, reply) {
+                return reply.view("borrow_books_view");
             },
         },
 
@@ -103,6 +112,24 @@ exports.register = function(server, options, next) {
             },
         },
 
+        //学员列表
+        {
+            method: 'GET',
+            path: '/students_list',
+            handler: function(request, reply) {
+                return reply.view("students_list");
+            },
+        },
+
+
+        //押金列表
+        {
+            method: 'GET',
+            path: '/card_deposit',
+            handler: function(request, reply) {
+                return reply.view("card_deposit");
+            },
+        },
 
     ]);
 

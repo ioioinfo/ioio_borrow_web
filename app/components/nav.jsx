@@ -48,7 +48,7 @@ class AdminLeftNav extends React.Component {
             <div className="nav_public  font_color" key={index} >
                 <a href={item.a}>
                   <div className="nav_public_first" data-role={index} onClick={this.handleClick}>
-                    <i className={item.icon}></i>&nbsp; {item.navname}
+                    <i className={item.icon} id="nav_public_first_style"></i>&nbsp; {item.navname}
                   </div>
                 </a>
                 <SecondNav item={item} index={index} />

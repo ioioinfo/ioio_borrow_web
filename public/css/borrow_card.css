@@ -3,7 +3,7 @@
     width: 700px;
     min-height: 200px;
     background: #fff;
-    margin: 0 auto;
+    margin: 27px auto 0;
   }
   .borrow_card_title{
     width: 700px;
@@ -53,7 +53,7 @@
   .creat_card{
     width: 90%;
     background: #fff;
-    margin: 0 auto;
+    margin: 27px auto 0;
     overflow: auto;
   }
   .borrow_card_title{

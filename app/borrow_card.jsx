@@ -29,7 +29,6 @@ class AdminRight extends React.Component {
       <div className="admin_right col-xs-12 col-sm-8 col-md-10">
         <AdminRightTop/>
         
-        <p className="borrow_card_title"><i className="fa fa-window-minimize fa-fw new_creat_play_style"></i>&nbsp; 新建计划</p>
         <div className="creat_card">
           <p className="borrow_card_in"><i className="fa fa-credit-card fa-fw"></i>&nbsp; 新建借书卡</p>
           <p className="borrow_card_name">

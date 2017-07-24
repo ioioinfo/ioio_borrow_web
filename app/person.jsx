@@ -18,7 +18,7 @@ class WebIndex extends React.Component {
             <span>2017/7/23</span>
             <span>2017/9/23</span>
           </p>
-          <p className="card_name">XXX教育培训机构</p>
+          <p className="card_name">佑佑教育培训机构</p>
         </div>
 
         <p className="borrow_card"><span>借书证</span></p>
