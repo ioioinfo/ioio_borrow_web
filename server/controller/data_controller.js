@@ -56,6 +56,7 @@ exports.register = function(server, options, next) {
                     {icon:"fa fa-money fa-fw",navname:"办卡押金",a:"card_deposit",snav:[]},
                     {icon:"fa fa-cube fa-fw",navname:"图书库存",a:"book_inventory",snav:[]},
                     {icon:"fa fa-vcard fa-fw",navname:"图书调拨",a:"borrow_card",snav:[]},
+                    {icon:"fa fa-retweet fa-fw",navname:"借书还书",a:"borrow_return",snav:[]},
                 ];
                 
                 return reply({"success":true,"rows":rows,"message":"ok"});
