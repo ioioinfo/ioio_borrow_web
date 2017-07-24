@@ -140,6 +140,15 @@ exports.register = function(server, options, next) {
             },
         },
 
+        //借还操作
+        {
+            method: 'GET',
+            path: '/borrow_return',
+            handler: function(request, reply) {
+                return reply.view("borrow_return");
+            },
+        },
+
 
     ]);
 
