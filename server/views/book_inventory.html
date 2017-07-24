@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>图书库存</title>
+    <link rel="stylesheet" href="css/weui.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/admin_index_public.css">
+    <link rel="stylesheet" href="css/admin_index_nav.css">
+    <link rel="stylesheet" href="css/book_inventory.css">
+    <link rel="stylesheet" href="css/borrow_view.css">
+
+</head>
+<body>
+    <div id="admin"></div>
+    <script type="text/javascript">
+      var platform_name = "{{platform_name}}";
+      var company_name = "{{company_name}}";
+      //表头
+      var tt = [{name:'campus',title:'校区',sort:false}
+                ,{name:'book_name',title:'书名',sort:false}
+                ,{name:'book_img',title:'图片',type:"images",sort:false}
+                ,{name:'inventory',title:'库存',sort:false}
+                ,{name:'borrow_out',title:'借出',sort:false}
+                ,{name:'remain',title:'剩余',sort:false}
+                ,{name:'statu',title:'状态',sort:false}];
+
+      function getTableData(params,cb) {
+          params.everyNum = 50;
+          var allNum = 0;
+          $.get("/list_data",{params:JSON.stringify(params)},function(data){
+              if (data.success) {
+                if (data.rows) {
+                  allNum = data.num;
+                  var rows = [{campus:"东南校区",book_name:"西游记",book_img:"sanguoyanyi.jpg",
+                              inventory:"2",borrow_out:"1",remain:"1",statu:"可借"},
+                              {campus:"西北校区",book_name:"西游记",book_img:"sanguoyanyi.jpg",
+                              inventory:"2",borrow_out:"1",remain:"1",statu:"可借"},];
+                  cb({tabthitems:tt,tabtritems:rows,allNum:allNum,everyNum:params.everyNum});
+                }
+              }else {
+                  alert(data.message);
+              }
+          });
+      };
+    </script>
+    <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/app/book_inventory.js"></script>
+
+</body>
+</html>

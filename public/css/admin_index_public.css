@@ -38,6 +38,11 @@ tr{
 tbody{
   overflow: auto;
 }
+
+.page_wrap span{
+  font-size: 12px;
+  color: #019695;
+}
 .operation_style{
   height: 35px;
   line-height: 35px;

@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 190);
+/******/ 	return __webpack_require__(__webpack_require__.s = 184);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -22654,13 +22654,7 @@ var Td = function (_React$Component4) {
 module.exports = Table;
 
 /***/ }),
-/* 184 */,
-/* 185 */,
-/* 186 */,
-/* 187 */,
-/* 188 */,
-/* 189 */,
-/* 190 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22739,7 +22733,6 @@ var AdminRight = function (_React$Component2) {
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-
       var tableHeight = $(window).height() - 181;
       $("#table").css("height", tableHeight + "px");
       this.loadData({});
@@ -22775,7 +22768,7 @@ var AdminRight = function (_React$Component2) {
                 { className: 'row' },
                 React.createElement(
                   'div',
-                  { className: 'admin_creat_butto_wrap col-xs-12 col-sm-3 col-md-2 cursor_pointer' },
+                  { className: 'admin_creat_butto_wrap col-xs-12 col-sm-3 col-md-2' },
                   React.createElement(
                     'p',
                     { className: 'button_style_delect text_align_center' },
@@ -22785,7 +22778,7 @@ var AdminRight = function (_React$Component2) {
                 ),
                 React.createElement(
                   'div',
-                  { className: 'admin_creat_butto_wrap col-xs-12 col-sm-3 col-md-2 cursor_pointer' },
+                  { className: 'admin_creat_butto_wrap col-xs-12 col-sm-3 col-md-2' },
                   React.createElement(
                     'p',
                     { className: 'button_style_new text_align_center' },
@@ -22808,7 +22801,7 @@ var AdminRight = function (_React$Component2) {
                 ),
                 React.createElement(
                   'button',
-                  { className: 'admin_creat_button_search col-xs-4 col-sm-4 col-md-4 button_style_search cursor_pointer' },
+                  { className: 'admin_creat_button_search col-xs-4 col-sm-4 col-md-4 button_style_search' },
                   '\u641C \u7D22'
                 )
               )
@@ -22816,8 +22809,7 @@ var AdminRight = function (_React$Component2) {
           )
         ),
         React.createElement(Table, { tabthitems: this.state.tabthitems, tabtritems: this.state.tabtritems, sort: this.state.sort, onSort: this.handleSort, checkTd: checkTd }),
-        React.createElement(PageTab, { setPage: this.setPage, allNum: this.state.allNum, everyNum: this.state.everyNum, thisPage: this.state.thisPage }),
-        React.createElement(Cerat, null)
+        React.createElement(PageTab, { setPage: this.setPage, allNum: this.state.allNum, everyNum: this.state.everyNum, thisPage: this.state.thisPage })
       );
     }
   }]);
@@ -22829,100 +22821,8 @@ var AdminRight = function (_React$Component2) {
 
 // 右边 头部
 
-var Cerat = function (_React$Component3) {
-  _inherits(Cerat, _React$Component3);
-
-  function Cerat() {
-    _classCallCheck(this, Cerat);
-
-    return _possibleConstructorReturn(this, (Cerat.__proto__ || Object.getPrototypeOf(Cerat)).apply(this, arguments));
-  }
-
-  _createClass(Cerat, [{
-    key: 'render',
-    value: function render() {
-      var style = { display: "none" };
-      return React.createElement(
-        'div',
-        { className: 'borrow_creat borrow_creat_style' },
-        React.createElement(
-          'p',
-          { className: 'borrow_creat_title borrow_creat_title_style' },
-          '\u65B0\u5EFA\u56FE\u4E66'
-        ),
-        React.createElement(
-          'div',
-          { className: 'borrow_creat_wrap' },
-          React.createElement(
-            'p',
-            { className: 'borrow_creat_infor borrow_creat_input_style' },
-            React.createElement(
-              'span',
-              { className: 'borrow_crea_name' },
-              '\u7F16\u53F7'
-            ),
-            React.createElement(
-              'span',
-              { className: 'borrow_crea_input' },
-              React.createElement('input', { type: 'text' })
-            )
-          ),
-          React.createElement(
-            'p',
-            { className: 'borrow_creat_infor borrow_creat_input_style' },
-            React.createElement(
-              'span',
-              { className: 'borrow_crea_name' },
-              '\u540D\u79F0'
-            ),
-            React.createElement(
-              'span',
-              { className: 'borrow_crea_input' },
-              React.createElement('input', { type: 'text' })
-            )
-          ),
-          React.createElement(
-            'p',
-            { className: 'borrow_creat_infor borrow_creat_input_style' },
-            React.createElement(
-              'span',
-              { className: 'borrow_crea_name' },
-              '\u4EF7\u683C'
-            ),
-            React.createElement(
-              'span',
-              { className: 'borrow_crea_input' },
-              React.createElement('input', { type: 'text' })
-            )
-          ),
-          React.createElement(
-            'p',
-            { className: 'borrow_creat_infor borrow_creat_input_style' },
-            React.createElement(
-              'span',
-              { className: 'borrow_crea_name' },
-              '\u6570\u91CF'
-            ),
-            React.createElement(
-              'span',
-              { className: 'borrow_crea_input' },
-              React.createElement('input', { type: 'text' })
-            )
-          )
-        )
-      );
-    }
-  }]);
-
-  return Cerat;
-}(React.Component);
-
-;
-
-// 右边 头部
-
-var AdminRightTop = function (_React$Component4) {
-  _inherits(AdminRightTop, _React$Component4);
+var AdminRightTop = function (_React$Component3) {
+  _inherits(AdminRightTop, _React$Component3);
 
   function AdminRightTop() {
     _classCallCheck(this, AdminRightTop);
@@ -22959,54 +22859,16 @@ var AdminRightTop = function (_React$Component4) {
 
 //判断特殊列
 var checkTd = function checkTd(defaultTd) {
-  var id = this.props.item.id;
-  var href = "product_edit?product_id=" + id;
-  var href1 = "product_view?product_id=" + id;
-
-  var product_down_click = function (e) {
-    var product_id = this.props.item.id;
-    $.ajax({
-      url: "/product_down",
-      dataType: 'json',
-      type: 'POST',
-      data: { "product_id": product_id },
-      success: function (data) {
-        if (data.success) {
-          this.props.refresh(product_id, this.props.item.status_name);
-        } else {}
-      }.bind(this),
-      error: function (xhr, status, err) {}.bind(this)
-    });
-  }.bind(this);
-
-  var product_up_click = function (e) {
-    var product_id = this.props.item.id;
-    $.ajax({
-      url: "/product_up",
-      dataType: 'json',
-      type: 'POST',
-      data: { "product_id": product_id },
-      success: function (data) {
-        if (data.success) {
-          this.props.refresh(product_id, this.props.item.status_name);
-        } else {}
-      }.bind(this),
-      error: function (xhr, status, err) {}.bind(this)
-    });
-  }.bind(this);
+  var statu = this.props.item.statu;
 
   if (this.props.thitem.type == "operation") {
     return React.createElement(
       'td',
       null,
       React.createElement(
-        'p',
-        { className: '', onClick: product_down_click },
-        React.createElement(
-          'a',
-          { className: 'btn btn-info btn-xs operate_announce' },
-          '\u501F\u9605'
-        )
+        'a',
+        { className: 'btn btn-primary btn-xs operate_announce', href: '#' },
+        '\u5F85 \u5B9A'
       )
     );
   } else if (this.props.thitem.type == "check") {

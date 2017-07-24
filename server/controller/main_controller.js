@@ -131,6 +131,16 @@ exports.register = function(server, options, next) {
             },
         },
 
+        //图书库存
+        {
+            method: 'GET',
+            path: '/book_inventory',
+            handler: function(request, reply) {
+                return reply.view("book_inventory");
+            },
+        },
+
+
     ]);
 
     next();
