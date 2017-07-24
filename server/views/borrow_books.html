@@ -19,14 +19,12 @@
     var company_name = "{{company_name}}";
     //表头
     var tt = [{name:'id',title:'全部',type:"check",sort:false}
-    ,{name:'book_name',title:'书籍',sort:false}
-    ,{name:'book_img',title:'图片',type:"images",sort:false}
-    ,{name:'number',title:'编号',sort:false}
-    ,{name:'price',title:'价格',sort:false}
-    ,{name:'borrow_data',title:'借阅日期',sort:false}
-    ,{name:'return_name',title:'归还日期',sort:false}
-    ,{name:'more_data',title:'超时',sort:false}
-    ,{name:'borrow_price',title:'费用',sort:false}
+    ,{name:'card_number',title:'证件号',sort:false}
+    ,{name:'borrow_person',title:'姓名',sort:false}
+    ,{name:'borrow_all',title:'总借阅',sort:false}
+    ,{name:'return_all',title:'总归还',sort:false}
+    ,{name:'not_return',title:'未归还',sort:false}
+    ,{name:'return_timeout',title:'已超时',sort:false}
     ,{name:'operation',title:'操作',type:"operation"}];
 
     function getTableData(params,cb) {
@@ -36,30 +34,9 @@
             if (data.success) {
               if (data.rows) {
                 allNum = data.num;
-                var rows = [{book_name:"三国演义",book_img:"sanguoyanyi.jpg",
-                            number:"000001",price:"100",borrow_data:"20017/5/21",
-                            return_name:"20017/7/22",more_data:"1",borrow_price:"1"},
-                            {book_name:"三国演义",book_img:"sanguoyanyi.jpg",
-                            number:"000001",price:"100",borrow_data:"20017/5/21",
-                            return_name:"20017/7/22",more_data:"1",borrow_price:"1"},
-                            {book_name:"三国演义",book_img:"sanguoyanyi.jpg",
-                            number:"000001",price:"100",borrow_data:"20017/5/21",
-                            return_name:"20017/7/22",more_data:"1",borrow_price:"1"},
-                            {book_name:"三国演义",book_img:"sanguoyanyi.jpg",
-                            number:"000001",price:"100",borrow_data:"20017/5/21",
-                            return_name:"20017/7/22",more_data:"1",borrow_price:"1"},
-                            {book_name:"三国演义",book_img:"sanguoyanyi.jpg",
-                            number:"000001",price:"100",borrow_data:"20017/5/21",
-                            return_name:"20017/7/22",more_data:"1",borrow_price:"1"},
-                            {book_name:"三国演义",book_img:"sanguoyanyi.jpg",
-                            number:"000001",price:"100",borrow_data:"20017/5/21",
-                            return_name:"20017/7/22",more_data:"1",borrow_price:"1"},
-                            {book_name:"三国演义",book_img:"sanguoyanyi.jpg",
-                            number:"000001",price:"100",borrow_data:"20017/5/21",
-                            return_name:"20017/7/22",more_data:"1",borrow_price:"1"},
-                            {book_name:"三国演义",book_img:"sanguoyanyi.jpg",
-                            number:"000001",price:"100",borrow_data:"20017/5/21",
-                            return_name:"20017/7/22",more_data:"1",borrow_price:"1"}];
+                var rows = [{card_number:"123456",borrow_person:"周润华",
+                            borrow_all:"3",return_all:"2",not_return:"1",
+                            return_timeout:"1"}];
                 cb({tabthitems:tt,tabtritems:rows,allNum:allNum,everyNum:params.everyNum});
               }
             }else {

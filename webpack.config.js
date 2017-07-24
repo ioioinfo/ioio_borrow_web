@@ -23,6 +23,8 @@ module.exports = {
         my_borrow: './app/my_borrow.jsx',
         person: './app/person.jsx',
         borrow_card: './app/borrow_card.jsx',
+        borrow_books_view: './app/borrow_books_view.jsx',
+        students_list: './app/students_list.jsx',
     },
     output: {
         path: __dirname,

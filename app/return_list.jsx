@@ -99,55 +99,12 @@ class AdminRightTop extends React.Component {
 
 //判断特殊列
 var checkTd = function(defaultTd) {
-    var id = this.props.item.id;
-    var href = "product_edit?product_id="+id;
-    var href1 = "product_view?product_id="+id;
-
-
-    var product_down_click = function(e){
-        var  product_id = this.props.item.id;
-        $.ajax({
-            url: "/product_down",
-            dataType: 'json',
-            type: 'POST',
-            data: {"product_id":product_id},
-            success: function(data) {
-                if (data.success) {
-                    this.props.refresh(product_id,this.props.item.status_name);
-                }else {
-                }
-
-            }.bind(this),
-            error: function(xhr, status, err) {
-            }.bind(this)
-        });
-    }.bind(this);
-
-
-    var product_up_click = function(e){
-        var  product_id = this.props.item.id;
-        $.ajax({
-            url: "/product_up",
-            dataType: 'json',
-            type: 'POST',
-            data: {"product_id":product_id},
-            success: function(data) {
-                if (data.success) {
-                    this.props.refresh(product_id,this.props.item.status_name);
-                }else {
-                }
-
-            }.bind(this),
-            error: function(xhr, status, err) {
-            }.bind(this)
-        });
-    }.bind(this);
 
         if(this.props.thitem.type=="operation"){
           return (
               <td>
-              <p className="operation_style"><a  className="btn btn-primary btn-xs operate_announce" href={href}>还书</a></p>
-              <p className="operation_style" onClick={product_down_click}><a  className="btn btn-info btn-xs operate_announce">下架</a></p>
+              <p className="operation_style"><a  className="btn btn-primary btn-xs operate_announce" href="">还书</a></p>
+              <p className="operation_style"><a  className="btn btn-info btn-xs operate_announce">下架</a></p>
               </td>
           );
         }else if (this.props.thitem.type=="check") {
