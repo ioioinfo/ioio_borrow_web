@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 185);
+/******/ 	return __webpack_require__(__webpack_require__.s = 188);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -22655,7 +22655,10 @@ module.exports = traverseAllChildren;
 
 /***/ }),
 /* 184 */,
-/* 185 */
+/* 185 */,
+/* 186 */,
+/* 187 */,
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22734,7 +22737,6 @@ var AdminRight = function (_React$Component2) {
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-
       var tableHeight = $(window).height() - 181;
       $("#table").css("height", tableHeight + "px");
       this.loadData({});
@@ -22770,7 +22772,7 @@ var AdminRight = function (_React$Component2) {
                 { className: 'row' },
                 React.createElement(
                   'div',
-                  { className: 'admin_creat_butto_wrap col-xs-12 col-sm-3 col-md-2 cursor_pointer' },
+                  { className: 'admin_creat_butto_wrap col-xs-12 col-sm-3 col-md-2' },
                   React.createElement(
                     'p',
                     { className: 'button_style_delect text_align_center' },
@@ -22780,7 +22782,7 @@ var AdminRight = function (_React$Component2) {
                 ),
                 React.createElement(
                   'div',
-                  { className: 'admin_creat_butto_wrap col-xs-12 col-sm-3 col-md-2 cursor_pointer' },
+                  { className: 'admin_creat_butto_wrap col-xs-12 col-sm-3 col-md-2' },
                   React.createElement(
                     'p',
                     { className: 'button_style_new text_align_center' },
@@ -22803,15 +22805,97 @@ var AdminRight = function (_React$Component2) {
                 ),
                 React.createElement(
                   'button',
-                  { className: 'admin_creat_button_search col-xs-4 col-sm-4 col-md-4 button_style_search cursor_pointer' },
+                  { className: 'admin_creat_button_search col-xs-4 col-sm-4 col-md-4 button_style_search' },
                   '\u641C \u7D22'
                 )
               )
             )
           )
         ),
-        React.createElement(Table, { tabthitems: this.state.tabthitems, tabtritems: this.state.tabtritems, sort: this.state.sort, onSort: this.handleSort, checkTd: checkTd }),
-        React.createElement(PageTab, { setPage: this.setPage, allNum: this.state.allNum, everyNum: this.state.everyNum, thisPage: this.state.thisPage })
+        React.createElement(
+          'div',
+          { className: 'row' },
+          React.createElement(
+            'div',
+            { className: 'col-xs-12 col-md-4' },
+            React.createElement(
+              'div',
+              { className: 'creat_card' },
+              React.createElement(
+                'p',
+                { className: 'borrow_card_in' },
+                React.createElement('i', { className: 'fa fa-credit-card fa-fw' }),
+                '\xA0 \u5B66\u5458\u4FE1\u606F'
+              ),
+              React.createElement(
+                'p',
+                { className: 'borrow_card_name' },
+                '\u65E5\u671F\uFF1A',
+                React.createElement(
+                  'span',
+                  { className: 'borrow_card_input_span' },
+                  React.createElement('input', { className: 'borrow_card_input_span_input', type: 'text' })
+                )
+              ),
+              React.createElement(
+                'p',
+                { className: 'borrow_card_name' },
+                '\u5230\u671F\uFF1A',
+                React.createElement(
+                  'span',
+                  { className: 'borrow_card_input_span' },
+                  React.createElement('input', { className: 'borrow_card_input_span_input', type: 'text' })
+                )
+              ),
+              React.createElement(
+                'p',
+                { className: 'borrow_card_name' },
+                '\u59D3\u540D\uFF1A',
+                React.createElement(
+                  'span',
+                  { className: 'borrow_card_input_span' },
+                  React.createElement('input', { className: 'borrow_card_input_span_input', type: 'text' })
+                )
+              ),
+              React.createElement(
+                'p',
+                { className: 'borrow_card_name' },
+                '\u5361\u53F7\uFF1A',
+                React.createElement(
+                  'span',
+                  { className: 'borrow_card_input_span' },
+                  React.createElement('input', { className: 'borrow_card_input_span_input', type: 'text', readOnly: 'readOnly' })
+                )
+              ),
+              React.createElement(
+                'p',
+                { className: 'borrow_card_name' },
+                '\u5B66\u53F7\uFF1A',
+                React.createElement(
+                  'span',
+                  { className: 'borrow_card_input_span' },
+                  React.createElement('input', { className: 'borrow_card_input_span_input', type: 'text' })
+                )
+              ),
+              React.createElement(
+                'div',
+                { className: 'button_creat_card' },
+                React.createElement(
+                  'p',
+                  { className: 'button_style_creat_card text_align_center' },
+                  React.createElement('i', { className: 'fa fa-credit-card-alt fa-fw admin_creat_button ' }),
+                  '\xA0 \u8FD8\u4E66'
+                )
+              )
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'col-xs-12 col-md-8' },
+            React.createElement(Table, { tabthitems: this.state.tabthitems, tabtritems: this.state.tabtritems, sort: this.state.sort, onSort: this.handleSort, checkTd: checkTd }),
+            React.createElement(PageTab, { setPage: this.setPage, allNum: this.state.allNum, everyNum: this.state.everyNum, thisPage: this.state.thisPage })
+          )
+        )
       );
     }
   }]);
@@ -22861,20 +22945,16 @@ var AdminRightTop = function (_React$Component3) {
 
 //判断特殊列
 var checkTd = function checkTd(defaultTd) {
-  var id = this.props.item.id;
+  var statu = this.props.item.statu;
 
   if (this.props.thitem.type == "operation") {
     return React.createElement(
       'td',
       null,
       React.createElement(
-        'p',
-        { className: '' },
-        React.createElement(
-          'a',
-          { href: 'borrow_books_view', className: 'btn btn-info btn-xs operate_announce' },
-          '\u67E5 \u770B'
-        )
+        'a',
+        { className: 'btn btn-primary btn-xs operate_announce', href: '#' },
+        '\u5F85 \u5B9A'
       )
     );
   } else if (this.props.thitem.type == "check") {
@@ -22882,6 +22962,12 @@ var checkTd = function checkTd(defaultTd) {
       'td',
       null,
       React.createElement('input', { type: 'checkbox' })
+    );
+  } else if (this.props.thitem.type == "images") {
+    return React.createElement(
+      'td',
+      null,
+      React.createElement('img', { className: 'book_img', src: "images/" + this.props.item[this.props.thitem.name], alt: '' })
     );
   } else {
     return defaultTd;

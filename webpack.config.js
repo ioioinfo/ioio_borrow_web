@@ -27,6 +27,7 @@ module.exports = {
         students_list: './app/students_list.jsx',
         card_deposit: './app/card_deposit.jsx',
         book_inventory: './app/book_inventory.jsx',
+        borrow_return: './app/borrow_return.jsx',
     },
     output: {
         path: __dirname,
