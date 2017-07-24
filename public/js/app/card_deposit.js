@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 194);
+/******/ 	return __webpack_require__(__webpack_require__.s = 188);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -22658,13 +22658,7 @@ module.exports = Table;
 /* 185 */,
 /* 186 */,
 /* 187 */,
-/* 188 */,
-/* 189 */,
-/* 190 */,
-/* 191 */,
-/* 192 */,
-/* 193 */,
-/* 194 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22878,12 +22872,7 @@ var checkTd = function checkTd(defaultTd) {
       React.createElement(
         'a',
         { className: 'btn btn-primary btn-xs operate_announce', href: '#' },
-        '\u8FD8\u4E66'
-      ),
-      React.createElement(
-        'a',
-        { className: 'btn btn-info btn-xs operate_announce', href: 'borrow_view' },
-        '\u5DF2\u8FD8'
+        '\u9000\u6B3E'
       )
     );
   } else if (this.props.thitem.type == "check") {

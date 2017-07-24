@@ -122,6 +122,15 @@ exports.register = function(server, options, next) {
         },
 
 
+        //押金列表
+        {
+            method: 'GET',
+            path: '/card_deposit',
+            handler: function(request, reply) {
+                return reply.view("card_deposit");
+            },
+        },
+
     ]);
 
     next();

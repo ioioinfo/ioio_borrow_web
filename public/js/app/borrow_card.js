@@ -9636,7 +9636,7 @@ var AdminLeftNav = function (_React$Component2) {
               React.createElement(
                 "div",
                 { className: "nav_public_first", "data-role": index, onClick: _this3.handleClick },
-                React.createElement("i", { className: item.icon }),
+                React.createElement("i", { className: item.icon, id: "nav_public_first_style" }),
                 "\xA0 ",
                 item.navname
               )
@@ -22257,12 +22257,6 @@ var AdminRight = function (_React$Component2) {
         'div',
         { className: 'admin_right col-xs-12 col-sm-8 col-md-10' },
         React.createElement(AdminRightTop, null),
-        React.createElement(
-          'p',
-          { className: 'borrow_card_title' },
-          React.createElement('i', { className: 'fa fa-window-minimize fa-fw new_creat_play_style' }),
-          '\xA0 \u65B0\u5EFA\u8BA1\u5212'
-        ),
         React.createElement(
           'div',
           { className: 'creat_card' },

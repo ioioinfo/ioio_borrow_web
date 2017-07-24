@@ -9636,7 +9636,7 @@ var AdminLeftNav = function (_React$Component2) {
               React.createElement(
                 "div",
                 { className: "nav_public_first", "data-role": index, onClick: _this3.handleClick },
-                React.createElement("i", { className: item.icon }),
+                React.createElement("i", { className: item.icon, id: "nav_public_first_style" }),
                 "\xA0 ",
                 item.navname
               )

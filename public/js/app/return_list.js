@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 192);
+/******/ 	return __webpack_require__(__webpack_require__.s = 193);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -9636,7 +9636,7 @@ var AdminLeftNav = function (_React$Component2) {
               React.createElement(
                 "div",
                 { className: "nav_public_first", "data-role": index, onClick: _this3.handleClick },
-                React.createElement("i", { className: item.icon }),
+                React.createElement("i", { className: item.icon, id: "nav_public_first_style" }),
                 "\xA0 ",
                 item.navname
               )
@@ -22662,7 +22662,8 @@ module.exports = Table;
 /* 189 */,
 /* 190 */,
 /* 191 */,
-/* 192 */
+/* 192 */,
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

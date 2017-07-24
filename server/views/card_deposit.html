@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>办卡押金</title>
+    <link rel="stylesheet" href="css/weui.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/admin_index_public.css">
+    <link rel="stylesheet" href="css/admin_index_nav.css">
+    <link rel="stylesheet" href="css/card_deposit.css">
+    <link rel="stylesheet" href="css/borrow_view.css">
+
+</head>
+<body>
+    <div id="admin"></div>
+    <script type="text/javascript">
+      var platform_name = "{{platform_name}}";
+      var company_name = "{{company_name}}";
+      //表头
+      var tt = [{name:'id',title:'全部',type:"check",sort:false}
+      ,{name:'borrow_person',title:'姓名',sort:false}
+      ,{name:'student_id',title:'学号',sort:false}
+      ,{name:'card_number',title:'证件号',sort:false}
+      ,{name:'creat_date',title:'办卡日期',sort:false}
+      ,{name:'card_deposit',title:'押金',sort:false}
+      ,{name:'due_date',title:'到期',sort:false}
+      ,{name:'statu',title:'状态',sort:false}
+      ,{name:'operation',title:'操作',type:"operation"}];
+
+      function getTableData(params,cb) {
+          params.everyNum = 50;
+          var allNum = 0;
+          $.get("/list_data",{params:JSON.stringify(params)},function(data){
+              if (data.success) {
+                if (data.rows) {
+                  allNum = data.num;
+                  var rows = [{borrow_person:"周润华",student_id:"123456",card_number:"123456",
+                              creat_date:"20017/5/21",card_deposit:"200",due_date:"20017/7/22",statu:"过期"},
+                              {borrow_person:"刘达华",student_id:"123456",card_number:"123456",
+                              creat_date:"20017/5/21",card_deposit:"200",due_date:"20017/7/22",statu:"未过期",}];
+                  cb({tabthitems:tt,tabtritems:rows,allNum:allNum,everyNum:params.everyNum});
+                }
+              }else {
+                  alert(data.message);
+              }
+          });
+      };
+    </script>
+    <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/app/card_deposit.js"></script>
+
+</body>
+</html>
