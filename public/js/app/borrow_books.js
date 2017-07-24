@@ -22577,7 +22577,7 @@ var AdminLeftNav = function (_React$Component3) {
 
     var _this3 = _possibleConstructorReturn(this, (AdminLeftNav.__proto__ || Object.getPrototypeOf(AdminLeftNav)).call(this, props));
 
-    _this3.state = { navitem: [] };
+    _this3.state = { items: [] };
     _this3.handleClick = _this3.handleClick.bind(_this3);
     return _this3;
   }
@@ -22592,8 +22592,16 @@ var AdminLeftNav = function (_React$Component3) {
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var navitem = [{ icon: "fa fa-home fa-fw", navname: "首页", a: "index", snav: [{ icon: "fa fa-home fa-fw", navname: "首页" }, { icon: "fa fa-home fa-fw", navname: "首页" }, { icon: "fa fa-home fa-fw", navname: "首页" }] }, { icon: "fa fa-minus-square-o fa-fw", navname: "借阅记录", a: "borrow_books", snav: [{ icon: "fa fa-home fa-fw", navname: "首页" }, { icon: "fa fa-home fa-fw", navname: "首页" }, { icon: "fa fa-home fa-fw", navname: "首页" }] }, { icon: "fa fa-tags fa-fw", navname: "还书列表", a: "return_list", snav: [{ icon: "fa fa-home fa-fw", navname: "首页" }] }, { icon: "fa fa-television fa-fw", navname: "还书详情", a: "borrow_view", snav: [{ icon: "fa fa-home fa-fw", navname: "首页" }] }, { icon: "fa fa-users fa-fw", navname: "功能菜单一", snav: [{ icon: "fa fa-home fa-fw", navname: "首页" }] }, { icon: "fa fa-window-close-o fa-fw", navname: "功能菜单一", snav: [{ icon: "fa fa-home fa-fw", navname: "首页" }] }, { icon: "fa fa-automobile fa-fw", navname: "功能菜单一", snav: [{ icon: "fa fa-home fa-fw", navname: "首页" }] }, { icon: "fa fa-train fa-fw", navname: "功能菜单一", snav: [] }];
-      this.setState({ navitem: navitem });
+      $.ajax({
+        url: "/menu_list",
+        dataType: 'json',
+        type: 'GET',
+        data: {},
+        success: function (data) {
+          this.setState({ items: data.rows });
+        }.bind(this),
+        error: function (xhr, status, err) {}.bind(this)
+      });
     }
   }, {
     key: 'render',
@@ -22603,7 +22611,7 @@ var AdminLeftNav = function (_React$Component3) {
       return React.createElement(
         'div',
         { className: 'admin_index_nav' },
-        this.state.navitem.map(function (item, index) {
+        this.state.items.map(function (item, index) {
           return React.createElement(
             'div',
             { className: 'nav_public  font_color', key: index },
