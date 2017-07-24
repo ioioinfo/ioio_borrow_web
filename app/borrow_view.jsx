@@ -36,7 +36,7 @@ class AdminLeft extends React.Component {
 class AdminLeftNav extends React.Component {
   constructor(props) {
       super(props);
-      this.state={navitem:[]};
+      this.state={items:[]};
       this.handleClick=this.handleClick.bind(this);
   }
   handleClick(e){
@@ -45,20 +45,22 @@ class AdminLeftNav extends React.Component {
     $("#"+second_nav).slideToggle(400);
   }
   componentDidMount() {
-    var navitem = [{icon:"fa fa-home fa-fw",navname:"首页",a:"index", snav:[{icon:"fa fa-home fa-fw",navname:"首页"},{icon:"fa fa-home fa-fw",navname:"首页"},{icon:"fa fa-home fa-fw",navname:"首页"}]},
-              {icon:"fa fa-minus-square-o fa-fw",navname:"借阅记录",a:"borrow_books",snav:[{icon:"fa fa-home fa-fw",navname:"首页"},{icon:"fa fa-home fa-fw",navname:"首页"},{icon:"fa fa-home fa-fw",navname:"首页"}]},
-              {icon:"fa fa-tags fa-fw",navname:"还书列表",a:"return_list",snav:[{icon:"fa fa-home fa-fw",navname:"首页"}]},
-              {icon:"fa fa-television fa-fw",navname:"还书详情",a:"borrow_view",snav:[{icon:"fa fa-home fa-fw",navname:"首页"}]},
-              {icon:"fa fa-users fa-fw",navname:"功能菜单一",snav:[{icon:"fa fa-home fa-fw",navname:"首页"}]},
-              {icon:"fa fa-window-close-o fa-fw",navname:"功能菜单一",snav:[{icon:"fa fa-home fa-fw",navname:"首页"}]},
-              {icon:"fa fa-automobile fa-fw",navname:"功能菜单一",snav:[{icon:"fa fa-home fa-fw",navname:"首页"}]},
-              {icon:"fa fa-train fa-fw",navname:"功能菜单一",snav:[]}]
-              this.setState({navitem:navitem});
+    $.ajax({
+         url: "/menu_list",
+         dataType: 'json',
+         type: 'GET',
+         data:{},
+         success: function(data) {
+            this.setState({items:data.rows});
+         }.bind(this),
+         error: function(xhr, status, err) {
+         }.bind(this)
+    });
   }
   render() {
     return (
       <div className="admin_index_nav">
-        {this.state.navitem.map((item,index) => (
+        {this.state.items.map((item,index) => (
             <div className="nav_public  font_color" key={index} >
                 <a href={item.a}>
                   <div className="nav_public_first" data-role={index} onClick={this.handleClick}>
@@ -74,7 +76,6 @@ class AdminLeftNav extends React.Component {
     );
   }
 };
-
 
 // 二级 导航
 class SecondNav extends React.Component {
