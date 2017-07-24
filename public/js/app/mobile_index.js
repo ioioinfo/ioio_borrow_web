@@ -22037,13 +22037,21 @@ var ReactDOM = __webpack_require__(81);
 var WebIndex = function (_React$Component) {
     _inherits(WebIndex, _React$Component);
 
-    function WebIndex() {
+    function WebIndex(props) {
         _classCallCheck(this, WebIndex);
 
-        return _possibleConstructorReturn(this, (WebIndex.__proto__ || Object.getPrototypeOf(WebIndex)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (WebIndex.__proto__ || Object.getPrototypeOf(WebIndex)).call(this, props));
     }
 
     _createClass(WebIndex, [{
+        key: 'handleClick1',
+        value: function handleClick1(e) {
+            var dataid = $(e.target).data("role");
+            var id = e.target.id;
+            $(".weui-actionsheet__cell").removeClass("alert_style");
+            $("#" + id).addClass("alert_style");
+        }
+    }, {
         key: 'componentDidMount',
         value: function componentDidMount() {}
     }, {
@@ -22202,37 +22210,42 @@ var WebIndex = function (_React$Component) {
                             { className: 'weui-actionsheet__menu' },
                             React.createElement(
                                 'div',
-                                { className: 'weui-actionsheet__cell' },
+                                { className: 'weui-actionsheet__cell', 'data-role': '1', id: '1', onClick: this.handleClick1 },
+                                '\u5168\u90E8\u56FE\u4E66'
+                            ),
+                            React.createElement(
+                                'div',
+                                { className: 'weui-actionsheet__cell', 'data-role': '2', id: '2', onClick: this.handleClick1 },
                                 '\u7AE5\u8BDD\u6545\u4E8B'
                             ),
                             React.createElement(
                                 'div',
-                                { className: 'weui-actionsheet__cell' },
+                                { className: 'weui-actionsheet__cell', 'data-role': '3', id: '3', onClick: this.handleClick1 },
                                 '\u62FC\u97F3\u8BFB\u7269'
                             ),
                             React.createElement(
                                 'div',
-                                { className: 'weui-actionsheet__cell' },
+                                { className: 'weui-actionsheet__cell', 'data-role': '4', id: '4', onClick: this.handleClick1 },
                                 '\u5C0F\u8BF4'
                             ),
                             React.createElement(
                                 'div',
-                                { className: 'weui-actionsheet__cell' },
+                                { className: 'weui-actionsheet__cell', 'data-role': '5', id: '5', onClick: this.handleClick1 },
                                 '\u5BD3\u8A00\u795E\u8BDD'
                             ),
                             React.createElement(
                                 'div',
-                                { className: 'weui-actionsheet__cell' },
+                                { className: 'weui-actionsheet__cell', 'data-role': '6', id: '6', onClick: this.handleClick1 },
                                 '\u6563\u6587\u8BD7\u6B4C'
                             ),
                             React.createElement(
                                 'div',
-                                { className: 'weui-actionsheet__cell' },
+                                { className: 'weui-actionsheet__cell', 'data-role': '7', id: '7', onClick: this.handleClick1 },
                                 '\u513F\u7AE5\u6B4C\u8C23'
                             ),
                             React.createElement(
                                 'div',
-                                { className: 'weui-actionsheet__cell' },
+                                { className: 'weui-actionsheet__cell', 'data-role': '8', id: '8', onClick: this.handleClick1 },
                                 '\u540D\u4EBA\u4F20\u8BB0'
                             )
                         )

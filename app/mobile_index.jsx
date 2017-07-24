@@ -2,6 +2,15 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 
 class WebIndex extends React.Component {
+  constructor(props) {
+      super(props);
+  }
+  handleClick1(e){
+    var dataid = $(e.target).data("role");
+    var id = e.target.id;
+    $(".weui-actionsheet__cell").removeClass("alert_style");
+    $("#"+id).addClass("alert_style");
+  }
   componentDidMount(){
   }
   render() {
@@ -70,13 +79,14 @@ class WebIndex extends React.Component {
             <div className="weui-mask"></div>
             <div className="weui-actionsheet">
                 <div className="weui-actionsheet__menu">
-                    <div className="weui-actionsheet__cell">童话故事</div>
-                    <div className="weui-actionsheet__cell">拼音读物</div>
-                    <div className="weui-actionsheet__cell">小说</div>
-                    <div className="weui-actionsheet__cell">寓言神话</div>
-                    <div className="weui-actionsheet__cell">散文诗歌</div>
-                    <div className="weui-actionsheet__cell">儿童歌谣</div>
-                    <div className="weui-actionsheet__cell">名人传记</div>
+                    <div className="weui-actionsheet__cell" data-role="1" id="1" onClick={this.handleClick1}>全部图书</div>
+                    <div className="weui-actionsheet__cell" data-role="2" id="2" onClick={this.handleClick1}>童话故事</div>
+                    <div className="weui-actionsheet__cell" data-role="3" id="3" onClick={this.handleClick1}>拼音读物</div>
+                    <div className="weui-actionsheet__cell" data-role="4" id="4" onClick={this.handleClick1}>小说</div>
+                    <div className="weui-actionsheet__cell" data-role="5" id="5" onClick={this.handleClick1}>寓言神话</div>
+                    <div className="weui-actionsheet__cell" data-role="6" id="6" onClick={this.handleClick1}>散文诗歌</div>
+                    <div className="weui-actionsheet__cell" data-role="7" id="7" onClick={this.handleClick1}>儿童歌谣</div>
+                    <div className="weui-actionsheet__cell" data-role="8" id="8" onClick={this.handleClick1}>名人传记</div>
                 </div>
             </div>
         </div>

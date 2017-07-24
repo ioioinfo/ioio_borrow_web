@@ -14,7 +14,8 @@
 
   .borrow_card_input_span{
     display: inline-block;
-    border: 1px solid #F2F0F1;
+    border: 1px solid #ccc;
+    border-radius: 4px;
   }
   .borrow_card_input_span_input{
     border: none;

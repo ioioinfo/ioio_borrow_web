@@ -22031,6 +22031,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var React = __webpack_require__(50);
 var ReactDOM = __webpack_require__(81);
 
+var AdminLeft = __webpack_require__(191);
+
 var AdminIndex = function (_React$Component) {
   _inherits(AdminIndex, _React$Component);
 
@@ -22057,165 +22059,10 @@ var AdminIndex = function (_React$Component) {
 
 ;
 
-// 左边 导航
-
-var AdminLeft = function (_React$Component2) {
-  _inherits(AdminLeft, _React$Component2);
-
-  function AdminLeft() {
-    _classCallCheck(this, AdminLeft);
-
-    return _possibleConstructorReturn(this, (AdminLeft.__proto__ || Object.getPrototypeOf(AdminLeft)).apply(this, arguments));
-  }
-
-  _createClass(AdminLeft, [{
-    key: 'render',
-    value: function render() {
-      return React.createElement(
-        'div',
-        { className: 'admin_left col-xs-6 col-sm-4 col-md-2' },
-        React.createElement(
-          'div',
-          { className: 'admin_logo' },
-          React.createElement(
-            'span',
-            { className: 'admin_index_logo' },
-            'IOIO\u540E\u53F0'
-          ),
-          React.createElement('br', null),
-          React.createElement(
-            'span',
-            { className: 'admin_index_name' },
-            '\u4F51\u4F51\u4FE1\u606F\u79D1\u6280'
-          )
-        ),
-        React.createElement(AdminLeftNav, null)
-      );
-    }
-  }]);
-
-  return AdminLeft;
-}(React.Component);
-
-;
-
-// 左边 导航
-
-var AdminLeftNav = function (_React$Component3) {
-  _inherits(AdminLeftNav, _React$Component3);
-
-  function AdminLeftNav(props) {
-    _classCallCheck(this, AdminLeftNav);
-
-    var _this3 = _possibleConstructorReturn(this, (AdminLeftNav.__proto__ || Object.getPrototypeOf(AdminLeftNav)).call(this, props));
-
-    _this3.state = { items: [] };
-    _this3.handleClick = _this3.handleClick.bind(_this3);
-    return _this3;
-  }
-
-  _createClass(AdminLeftNav, [{
-    key: 'handleClick',
-    value: function handleClick(e) {
-      var index = $(e.target).data("role");
-      var second_nav = "nav_second" + index;
-      $("#" + second_nav).slideToggle(400);
-    }
-  }, {
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      $.ajax({
-        url: "/menu_list",
-        dataType: 'json',
-        type: 'GET',
-        data: {},
-        success: function (data) {
-          this.setState({ items: data.rows });
-        }.bind(this),
-        error: function (xhr, status, err) {}.bind(this)
-      });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this4 = this;
-
-      return React.createElement(
-        'div',
-        { className: 'admin_index_nav' },
-        this.state.items.map(function (item, index) {
-          return React.createElement(
-            'div',
-            { className: 'nav_public  font_color', key: index },
-            React.createElement(
-              'a',
-              { href: item.a },
-              React.createElement(
-                'div',
-                { className: 'nav_public_first', 'data-role': index, onClick: _this4.handleClick },
-                React.createElement('i', { className: item.icon }),
-                '\xA0 ',
-                item.navname
-              )
-            ),
-            React.createElement(SecondNav, { item: item, index: index })
-          );
-        })
-      );
-    }
-  }]);
-
-  return AdminLeftNav;
-}(React.Component);
-
-;
-
-// 二级 导航
-
-var SecondNav = function (_React$Component4) {
-  _inherits(SecondNav, _React$Component4);
-
-  function SecondNav() {
-    _classCallCheck(this, SecondNav);
-
-    return _possibleConstructorReturn(this, (SecondNav.__proto__ || Object.getPrototypeOf(SecondNav)).apply(this, arguments));
-  }
-
-  _createClass(SecondNav, [{
-    key: 'render',
-    value: function render() {
-      var secondNav = React.createElement(
-        'p',
-        { className: 'nav_second', id: "nav_second" + this.props.index },
-        this.props.item.snav.map(function (item, index) {
-          return React.createElement(
-            'a',
-            { key: index, className: 'nav_public_in nav_public_second font_color' },
-            React.createElement('i', { className: item.icon }),
-            '\xA0 ',
-            item.navname
-          );
-        })
-      );
-      if (this.props.item.snav.length == 0) {
-        secondNav = "";
-      }
-      return React.createElement(
-        'div',
-        null,
-        secondNav
-      );
-    }
-  }]);
-
-  return SecondNav;
-}(React.Component);
-
-;
 // 右边
 
-var AdminRight = function (_React$Component5) {
-  _inherits(AdminRight, _React$Component5);
+var AdminRight = function (_React$Component2) {
+  _inherits(AdminRight, _React$Component2);
 
   function AdminRight(props) {
     _classCallCheck(this, AdminRight);
@@ -22235,63 +22082,9 @@ var AdminRight = function (_React$Component5) {
         { className: 'admin_right col-xs-12 col-sm-8 col-md-10' },
         React.createElement(AdminRightTop, null),
         React.createElement(
-          'div',
-          { className: 'admin_creat overflow_hidden' },
-          React.createElement(
-            'div',
-            { className: '' },
-            React.createElement(
-              'div',
-              { className: 'col-xs-12 col-sm-8 col-md-8' },
-              React.createElement(
-                'div',
-                { className: 'row' },
-                React.createElement(
-                  'div',
-                  { className: 'admin_creat_butto_wrap col-xs-12 col-sm-3 col-md-2 cursor_pointer' },
-                  React.createElement(
-                    'p',
-                    { className: 'button_style_delect text_align_center' },
-                    React.createElement('i', { className: 'fa fa-trash fa-fw admin_creat_button ' }),
-                    '\xA0 \u5220 \u9664'
-                  )
-                ),
-                React.createElement(
-                  'div',
-                  { className: 'admin_creat_butto_wrap col-xs-12 col-sm-3 col-md-2 cursor_pointer' },
-                  React.createElement(
-                    'p',
-                    { className: 'button_style_new text_align_center' },
-                    React.createElement('i', { className: 'fa fa-plus fa-fw admin_creat_button ' }),
-                    '\xA0 \u65B0 \u5EFA'
-                  )
-                )
-              )
-            ),
-            React.createElement(
-              'div',
-              { className: 'col-xs-12 col-sm-4 col-md-4' },
-              React.createElement(
-                'div',
-                { className: 'row' },
-                React.createElement(
-                  'span',
-                  { className: 'admin_creat_search  col-xs-8 col-sm-8 col-md-8' },
-                  React.createElement('input', { className: 'admin_creat_input', type: 'search', placeholder: '\u8BF7\u8F93\u5165\u5173\u952E\u5B57' })
-                ),
-                React.createElement(
-                  'button',
-                  { className: 'admin_creat_button_search col-xs-4 col-sm-4 col-md-4 button_style_search cursor_pointer' },
-                  '\u641C \u7D22'
-                )
-              )
-            )
-          )
-        ),
-        React.createElement(
           'p',
           { className: 'borrow_card_title' },
-          React.createElement('i', { className: 'fa fa-window-minimize fa-fw' }),
+          React.createElement('i', { className: 'fa fa-window-minimize fa-fw new_creat_play_style' }),
           '\xA0 \u65B0\u5EFA\u8BA1\u5212'
         ),
         React.createElement(
@@ -22405,8 +22198,8 @@ var AdminRight = function (_React$Component5) {
 
 // 右边 头部
 
-var AdminRightTop = function (_React$Component6) {
-  _inherits(AdminRightTop, _React$Component6);
+var AdminRightTop = function (_React$Component3) {
+  _inherits(AdminRightTop, _React$Component3);
 
   function AdminRightTop() {
     _classCallCheck(this, AdminRightTop);
@@ -22443,6 +22236,187 @@ var AdminRightTop = function (_React$Component6) {
 
 // 返回到页面
 ReactDOM.render(React.createElement(AdminIndex, null), document.getElementById("admin"));
+
+/***/ }),
+/* 185 */,
+/* 186 */,
+/* 187 */,
+/* 188 */,
+/* 189 */,
+/* 190 */,
+/* 191 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var React = __webpack_require__(50);
+
+// 左边 导航
+
+var AdminLeft = function (_React$Component) {
+  _inherits(AdminLeft, _React$Component);
+
+  function AdminLeft() {
+    _classCallCheck(this, AdminLeft);
+
+    return _possibleConstructorReturn(this, (AdminLeft.__proto__ || Object.getPrototypeOf(AdminLeft)).apply(this, arguments));
+  }
+
+  _createClass(AdminLeft, [{
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "div",
+        { className: "admin_left col-xs-6 col-sm-4 col-md-2" },
+        React.createElement(
+          "div",
+          { className: "admin_logo" },
+          React.createElement(
+            "span",
+            { className: "admin_index_logo" },
+            platform_name
+          ),
+          React.createElement("br", null),
+          React.createElement(
+            "span",
+            { className: "admin_index_name" },
+            company_name
+          )
+        ),
+        React.createElement(AdminLeftNav, null)
+      );
+    }
+  }]);
+
+  return AdminLeft;
+}(React.Component);
+
+;
+
+// 左边 导航
+
+var AdminLeftNav = function (_React$Component2) {
+  _inherits(AdminLeftNav, _React$Component2);
+
+  function AdminLeftNav(props) {
+    _classCallCheck(this, AdminLeftNav);
+
+    var _this2 = _possibleConstructorReturn(this, (AdminLeftNav.__proto__ || Object.getPrototypeOf(AdminLeftNav)).call(this, props));
+
+    _this2.state = { items: [] };
+    _this2.handleClick = _this2.handleClick.bind(_this2);
+    return _this2;
+  }
+
+  _createClass(AdminLeftNav, [{
+    key: "handleClick",
+    value: function handleClick(e) {
+      var index = $(e.target).data("role");
+      var second_nav = "nav_second" + index;
+      $("#" + second_nav).slideToggle(400);
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      $.ajax({
+        url: "/menu_list",
+        dataType: 'json',
+        type: 'GET',
+        data: {},
+        success: function (data) {
+          this.setState({ items: data.rows });
+        }.bind(this),
+        error: function (xhr, status, err) {}.bind(this)
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      return React.createElement(
+        "div",
+        { className: "admin_index_nav" },
+        this.state.items.map(function (item, index) {
+          return React.createElement(
+            "div",
+            { className: "nav_public  font_color", key: index },
+            React.createElement(
+              "a",
+              { href: item.a },
+              React.createElement(
+                "div",
+                { className: "nav_public_first", "data-role": index, onClick: _this3.handleClick },
+                React.createElement("i", { className: item.icon }),
+                "\xA0 ",
+                item.navname
+              )
+            ),
+            React.createElement(SecondNav, { item: item, index: index })
+          );
+        })
+      );
+    }
+  }]);
+
+  return AdminLeftNav;
+}(React.Component);
+
+;
+
+// 二级 导航
+
+var SecondNav = function (_React$Component3) {
+  _inherits(SecondNav, _React$Component3);
+
+  function SecondNav() {
+    _classCallCheck(this, SecondNav);
+
+    return _possibleConstructorReturn(this, (SecondNav.__proto__ || Object.getPrototypeOf(SecondNav)).apply(this, arguments));
+  }
+
+  _createClass(SecondNav, [{
+    key: "render",
+    value: function render() {
+      var secondNav = React.createElement(
+        "p",
+        { className: "nav_second", id: "nav_second" + this.props.index },
+        this.props.item.snav.map(function (item, index) {
+          return React.createElement(
+            "a",
+            { key: index, className: "nav_public_in nav_public_second font_color" },
+            React.createElement("i", { className: item.icon }),
+            "\xA0 ",
+            item.navname
+          );
+        })
+      );
+      if (this.props.item.snav.length == 0) {
+        secondNav = "";
+      }
+      return React.createElement(
+        "div",
+        null,
+        secondNav
+      );
+    }
+  }]);
+
+  return SecondNav;
+}(React.Component);
+
+;
+
+module.exports = AdminLeft;
 
 /***/ })
 /******/ ]);

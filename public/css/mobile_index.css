@@ -41,3 +41,6 @@ body,html{
   right: 23px;
   bottom: 90px;
 }
+.alert_style{
+  color: red;
+}
