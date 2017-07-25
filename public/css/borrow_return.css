@@ -28,13 +28,14 @@
   padding: 17px;
 }
 .button_style_creat_card{
-  display: inline-block;
-  padding: 3px 88.5px;
   border-radius: 7px;
   background: #009695;
 
 }
+.button_style_creat_card1{
+  border-radius: 7px;
+  background: #FF7E00;
+}
 .button_creat_card{
-  margin-left: 60px;
   color: #fff;
 }

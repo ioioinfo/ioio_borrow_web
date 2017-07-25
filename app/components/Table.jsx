@@ -84,9 +84,17 @@ class Th extends React.Component {
         var thStyle = {
             width:this.props.item.width
         };
-        return (
-            <th style={thStyle}>{this.props.item.title} {img}</th>
-        );
+
+        if (this.props.item.type=="checkbox"){
+          return (
+              <th style={thStyle}><input type="checkbox" />{this.props.item.title} {img}</th>
+          );
+        }else{
+          return (
+              <th style={thStyle}>{this.props.item.title} {img}</th>
+          );
+        }
+
     }
 };
 
