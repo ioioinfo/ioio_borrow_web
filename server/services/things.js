@@ -22,6 +22,24 @@ var host = "http://211.149.248.241:16004/";
 
 var nav = function(server) {
     return {
+        //图书分类
+        list_categories: function(org_code,cb) {
+            var url = host + "book/list_categories?org_code=" + org_code;
+            uu_request.get(url, function(err, response, body) {
+                if (!err && response.statusCode === 200) {
+                    var info = JSON.parse(body);
+
+                    var rows = [];
+                    if (info.success) {
+                        rows = info.rows;
+                    }
+                    cb(err,rows);
+                } else {
+                    cb(true,{message:"网络错误"});
+                }
+            });
+        },
+        
         list_books: function(org_code,params,cb) {
             if (!params) {
                 params = "";

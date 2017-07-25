@@ -100,7 +100,24 @@ exports.register = function(server, options, next) {
                         });
                         
                         return reply({"success":true,"message":"ok","rows":rows,"num":rows.length});
-                    })
+                    });
+                });
+            }
+        },
+        
+        //图书分类列表
+        {
+            method: "GET",
+            path: '/list_categories',
+            handler: function(request, reply) {
+                var org_code = "ioio";
+                
+                things.list_categories(org_code,function(err,rows) {
+                    if (err) {
+                        return reply({"success":false,"message":rows.message});
+                    }
+                    
+                    return reply({"success":true,"message":"ok","rows":rows,"num":rows.length});
                 });
             }
         },
