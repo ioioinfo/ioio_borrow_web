@@ -107,8 +107,13 @@ class AdminRight extends React.Component {
                 </span>
               </p>
 
-              <div className="button_creat_card">
-                <p  className="button_style_creat_card text_align_center"><i className="fa fa-credit-card-alt fa-fw admin_creat_button "></i>&nbsp; 还书</p>
+              <div className="button_creat_card overflow_hidden">
+                <div className="col-md-5">
+                  <p  className="button_style_creat_card text_align_center"><i className="fa fa-credit-card-alt fa-fw admin_creat_button "></i>&nbsp; 还书</p>
+                </div>
+                <div className="col-md-5 col-md-offset-2">
+                  <p  className="button_style_creat_card1 text_align_center"><i className="fa fa-book fa-fw admin_creat_button "></i>&nbsp; 借书</p>
+                </div>
               </div>
             </div>
           </div>

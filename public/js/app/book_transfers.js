@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 191);
+/******/ 	return __webpack_require__(__webpack_require__.s = 185);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -22667,13 +22667,7 @@ module.exports = Table;
 
 /***/ }),
 /* 184 */,
-/* 185 */,
-/* 186 */,
-/* 187 */,
-/* 188 */,
-/* 189 */,
-/* 190 */,
-/* 191 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22752,6 +22746,7 @@ var AdminRight = function (_React$Component2) {
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
+
       var tableHeight = $(window).height() - 181;
       $("#table").css("height", tableHeight + "px");
       this.loadData({});
@@ -22775,60 +22770,44 @@ var AdminRight = function (_React$Component2) {
         React.createElement(AdminRightTop, null),
         React.createElement(
           'div',
-          { className: 'admin_creat overflow_hidden' },
+          { className: 'row book_transfers_campus' },
           React.createElement(
-            'div',
-            { className: '' },
+            'p',
+            { className: 'book_transfers_zhu text_align_center col-md-2' },
+            '\u4E1C\u5357\u6821\u533A'
+          ),
+          React.createElement(
+            'p',
+            { className: 'book_transfers_icon text_align_center col-md-1' },
+            React.createElement('i', { className: 'fa fa-angle-double-right fa-fw book_transfers_icon_style' }),
+            React.createElement('i', { className: 'fa fa-angle-double-right fa-fw book_transfers_icon_style' })
+          ),
+          React.createElement(
+            'p',
+            { className: 'book_transfers_fu text_align_center col-md-2' },
+            '\u897F\u5317\u6821\u533A'
+          ),
+          React.createElement(
+            'p',
+            { className: 'book_transfers_number text_align_center col-md-2 col-md-offset-2' },
+            '\u5171100\u672C'
+          ),
+          React.createElement(
+            'p',
+            { className: 'book_transfers_button text_align_center col-md-2 col-md-offset-1' },
             React.createElement(
-              'div',
-              { className: 'col-xs-12 col-sm-8 col-md-8' },
-              React.createElement(
-                'div',
-                { className: 'row' },
-                React.createElement(
-                  'div',
-                  { className: 'admin_creat_butto_wrap col-xs-12 col-sm-3 col-md-2' },
-                  React.createElement(
-                    'p',
-                    { className: 'button_style_delect text_align_center' },
-                    React.createElement('i', { className: 'fa fa-trash fa-fw admin_creat_button ' }),
-                    '\xA0 \u5220 \u9664'
-                  )
-                ),
-                React.createElement(
-                  'div',
-                  { className: 'admin_creat_butto_wrap col-xs-12 col-sm-3 col-md-2' },
-                  React.createElement(
-                    'p',
-                    { className: 'button_style_new text_align_center' },
-                    React.createElement('i', { className: 'fa fa-plus fa-fw admin_creat_button ' }),
-                    '\xA0 \u65B0 \u5EFA'
-                  )
-                )
-              )
-            ),
-            React.createElement(
-              'div',
-              { className: 'col-xs-12 col-sm-4 col-md-4' },
-              React.createElement(
-                'div',
-                { className: 'row' },
-                React.createElement(
-                  'span',
-                  { className: 'admin_creat_search  col-xs-8 col-sm-8 col-md-8' },
-                  React.createElement('input', { className: 'admin_creat_input', type: 'search', placeholder: '\u8BF7\u8F93\u5165\u5173\u952E\u5B57' })
-                ),
-                React.createElement(
-                  'button',
-                  { className: 'admin_creat_button_search col-xs-4 col-sm-4 col-md-4 button_style_search' },
-                  '\u641C \u7D22'
-                )
-              )
+              'span',
+              { className: 'book_transfers_button_span' },
+              '\u786E\u8BA4\u8C03\u62E8'
             )
           )
         ),
-        React.createElement(Table, { tabthitems: this.state.tabthitems, tabtritems: this.state.tabtritems, sort: this.state.sort, onSort: this.handleSort, checkTd: checkTd }),
-        React.createElement(PageTab, { setPage: this.setPage, allNum: this.state.allNum, everyNum: this.state.everyNum, thisPage: this.state.thisPage })
+        React.createElement(
+          'div',
+          null,
+          React.createElement(Table, { tabthitems: this.state.tabthitems, tabtritems: this.state.tabtritems, sort: this.state.sort, onSort: this.handleSort, checkTd: checkTd }),
+          React.createElement(PageTab, { setPage: this.setPage, allNum: this.state.allNum, everyNum: this.state.everyNum, thisPage: this.state.thisPage })
+        )
       );
     }
   }]);
@@ -22887,7 +22866,7 @@ var checkTd = function checkTd(defaultTd) {
       React.createElement(
         'a',
         { className: 'btn btn-primary btn-xs operate_announce', href: '#' },
-        '\u9000\u6B3E'
+        '\u5F85 \u5B9A'
       )
     );
   } else if (this.props.thitem.type == "check") {
@@ -22895,6 +22874,12 @@ var checkTd = function checkTd(defaultTd) {
       'td',
       null,
       React.createElement('input', { type: 'checkbox' })
+    );
+  } else if (this.props.thitem.type == "images") {
+    return React.createElement(
+      'td',
+      null,
+      React.createElement('img', { className: 'book_img', src: "images/" + this.props.item[this.props.thitem.name], alt: '' })
     );
   } else {
     return defaultTd;

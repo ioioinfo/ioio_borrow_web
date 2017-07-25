@@ -150,6 +150,16 @@ exports.register = function(server, options, next) {
         },
 
 
+          //图书调拨
+          {
+              method: 'GET',
+              path: '/book_transfers',
+              handler: function(request, reply) {
+                  return reply.view("book_transfers");
+              },
+          },
+
+
     ]);
 
     next();

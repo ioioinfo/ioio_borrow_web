@@ -28,6 +28,7 @@ module.exports = {
         card_deposit: './app/card_deposit.jsx',
         book_inventory: './app/book_inventory.jsx',
         borrow_return: './app/borrow_return.jsx',
+        book_transfers: './app/book_transfers.jsx',
     },
     output: {
         path: __dirname,

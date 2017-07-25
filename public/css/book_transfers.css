@@ -1,0 +1,26 @@
+.book_transfers_campus{
+  padding: 17px 15px;
+  background: #fff;
+  font-size: 18px;
+}
+.book_transfers_zhu{
+  color: #019695;
+}
+.book_transfers_fu{
+  color: #C9254F;
+}
+.book_transfers_number{
+  color: #019695;
+}
+.book_transfers_button{
+  text-align: center;
+}
+.book_transfers_button_span{
+  display: inline-block;
+  padding: 0 4px;
+  background: #C9254F;
+  color: #fff;
+}
+.book_transfers_icon_style{
+  color: #C19F27;
+}

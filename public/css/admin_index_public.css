@@ -38,7 +38,9 @@ tr{
 tbody{
   overflow: auto;
 }
-
+.text_align_center{
+  text-align: center;
+}
 .page_wrap span{
   font-size: 12px;
   color: #019695;
